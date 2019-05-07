@@ -31,6 +31,7 @@ public class SistemAkademikItera {
         
         int input = sc.nextInt();
         
+        
         if (input==1){
             //kalo klik admin mulai dari sini untuk GUI
             System.out.println("\nlogin sebagai admin");
@@ -54,7 +55,13 @@ public class SistemAkademikItera {
             String nim = sc.next();
             Mahasiswa mahasiswa = new Mahasiswa(nim);
             
-            mahasiswa.terdaftar(con);
+//            mahasiswa.terdaftar(con);
+            if(mahasiswa.terdaftar(con)){
+                //alihkan ke form
+                mahasiswa.pilihBarangRuang(con);
+            }else{
+                //isi ulang nim
+            }
         }
     }
 }
