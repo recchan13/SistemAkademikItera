@@ -32,26 +32,28 @@ public class SistemAkademikItera {
         int input = sc.nextInt();
         
         if (input==1){
-            //kalo klik admin mulai dari sini
-            System.out.println("login sebagai admin");
+            //kalo klik admin mulai dari sini untuk GUI
+            System.out.println("\nlogin sebagai admin");
 
             String uname = sc.next();
             String pass = sc.next();
             Admin admin = new Admin(uname,pass);
         
             if(admin.login(con)){
-                System.out.println("Login berhasil");
+                System.out.println("Login berhasil\n");
                 //masuk ke menu admin
             }else{
-                System.out.println("Login Gagal");
+                System.out.println("Login Gagal\n");
             }
+            admin.menu(con);
+        
         }else if (input==2){
-            //kalo klik mahasiswa mulai dari sini 
-            System.out.println("login sebagai mahasiswa");
+            //kalo klik mahasiswa mulai dari sini untuk GUI
+            System.out.println("\nlogin sebagai mahasiswa");
 
             String nim = sc.next();
             Mahasiswa mahasiswa = new Mahasiswa(nim);
-        
+            
             mahasiswa.terdaftar(con);
         }
     }

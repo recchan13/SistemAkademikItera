@@ -10,6 +10,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
+import java.util.Scanner;
+import java.util.TreeMap;
+
 
 /**
  *
@@ -18,6 +21,9 @@ import java.util.HashMap;
 public class Admin {
     String username; 
     String pass;
+    Scanner sc = new Scanner(System.in);
+    
+    TreeMap<String,String> log= new TreeMap<>();
     
     public Admin(String username, String pass) {
         this.username=username;
@@ -29,7 +35,6 @@ public class Admin {
         String query="SELECT * FROM admin";
         ResultSet rs = stmt.executeQuery(query);
         
-        HashMap<String,String> log= new HashMap<>();
 
         String passFromDb="";
         String unameFromDb="";
@@ -46,5 +51,27 @@ public class Admin {
         }else{
             return false;
         }
+    }
+    
+    public void menu (Connection con) throws SQLException{
+        System.out.println("1. mendaftarkan admin baru");
+        System.out.println("pilihan : ");
+        
+        Integer input=sc.nextInt();
+        
+        if (input==1){
+            this.tambah(con);
+        }
+    }
+    
+    public void tambah (Connection con) throws SQLException{
+        System.out.println("\nusername : ");
+        String unameBaru = sc.next();
+        System.out.println("\npassword : ");
+        String passBaru = sc.next();
+        
+        log.put(unameBaru, passBaru);
+        
+        System.out.println("isi log" + log);
     }
 }
