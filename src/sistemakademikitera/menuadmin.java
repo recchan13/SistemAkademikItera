@@ -5,12 +5,16 @@
  */
 package sistemakademikitera;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Alle
  */
 public class menuadmin extends javax.swing.JFrame {
-
+    Connection con=null;
     /**
      * Creates new form menuadmin
      */
@@ -28,10 +32,10 @@ public class menuadmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        tambahadmin = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        tambahadmin1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -43,10 +47,15 @@ public class menuadmin extends javax.swing.JFrame {
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 150, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/health.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 150, -1));
+        tambahadmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/health.png"))); // NOI18N
+        tambahadmin.setText("jLabel4");
+        tambahadmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tambahadmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tambahadminMouseClicked(evt);
+            }
+        });
+        getContentPane().add(tambahadmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 150, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/pineapple-512.png"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -59,11 +68,16 @@ public class menuadmin extends javax.swing.JFrame {
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Tambah Admin");
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
+        tambahadmin1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        tambahadmin1.setForeground(new java.awt.Color(255, 255, 255));
+        tambahadmin1.setText("Tambah Admin");
+        tambahadmin1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tambahadmin1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tambahadminMouseClicked(evt);
+            }
+        });
+        getContentPane().add(tambahadmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,6 +91,20 @@ public class menuadmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tambahadminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tambahadminMouseClicked
+        // TODO add your handling code here:
+        
+//        Admin adm=new Admin(jTextField1.getText(),jTextField2.getText());
+        
+//        try {
+//            adm.tambah(con);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(tambahadmin.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        tambahadmin tambah = new tambahadmin();
+        tambah.setVisible(true);
+    }//GEN-LAST:event_tambahadminMouseClicked
 
     /**
      * @param args the command line arguments
@@ -117,9 +145,9 @@ public class menuadmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel tambahadmin;
+    private javax.swing.JLabel tambahadmin1;
     // End of variables declaration//GEN-END:variables
 }
