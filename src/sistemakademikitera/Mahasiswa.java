@@ -22,7 +22,7 @@ public class Mahasiswa {
     
     public Mahasiswa(String nim) {
         this.nim=nim;
-//        this.nama=nama;
+        this.nama="";
 //        this.prodi=prodi;
     }
     
@@ -42,10 +42,9 @@ public class Mahasiswa {
             namaFromDb=rs.getString("nama");
             ada.put(nimFromDb, namaFromDb);
         }
-        
-        if (nim.equals(nimFromDb)){
+        if (ada.get(nim)!=null){
             this.nama=ada.get(nim);
-            System.out.println(ada.get(nim));
+//            System.out.println(nama);
             return true;
         }else{
             System.out.println("maaf anda bukan mahasiswa IF ITERA");

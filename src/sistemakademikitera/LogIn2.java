@@ -5,19 +5,25 @@
  */
 package sistemakademikitera;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Alle
  */
 public class LogIn2 extends javax.swing.JFrame {
-
+    
+    Connection con=null;
     /**
      * Creates new form LogIn2
      */
     public LogIn2() {
         initComponents();
+        con=new KonekDB().getConnection();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -134,14 +140,21 @@ public class LogIn2 extends javax.swing.JFrame {
     }//GEN-LAST:event_UnameeActionPerformed
 
     private void DAUNKANANMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DAUNKANANMouseClicked
-        // TODO add your handling code here:
-        if(Unamee.getText().equals("admin")&&Pass.getText().equals("1234")){
-            Keterangan.setText("Log In Berhasil");
-            menuadmin menu = new menuadmin();
-            menu.setVisible(true);
-        }else{
-            Pass.setText("");
-            Keterangan.setText("Log In Gagal");
+        try {
+            // TODO add your handling code here:
+            Admin admin = new Admin(Unamee.getText(), Pass.getText());
+            
+            if(admin.login(con)){
+                Keterangan.setText("Log In Berhasil");
+                menuadmin menu = new menuadmin();
+                menu.setVisible(true);
+                this.dispose();
+            }else{
+                Pass.setText("");
+                Keterangan.setText("Log In Gagal");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LogIn2.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_DAUNKANANMouseClicked
 
@@ -149,23 +162,32 @@ public class LogIn2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         LogIn login = new LogIn();
         login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_DAUNKIRIMouseClicked
 
     private void DAUNBACKDAUNKIRIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DAUNBACKDAUNKIRIMouseClicked
         // TODO add your handling code here:
         LogIn login = new LogIn();
         login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_DAUNBACKDAUNKIRIMouseClicked
 
     private void jLabel3DAUNKANANMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3DAUNKANANMouseClicked
-        // TODO add your handling code here:
-        if(Unamee.getText().equals("admin")&&Pass.getText().equals("1234")){
-            Keterangan.setText("Log In Berhasil");
-            menuadmin menu = new menuadmin();
-            menu.setVisible(true);
-        }else{
-            Pass.setText("");
-            Keterangan.setText("Log In Gagal");
+        try {
+            // TODO add your handling code here:
+            Admin admin = new Admin(Unamee.getText(), Pass.getText());
+            
+            if(admin.login(con)){
+                Keterangan.setText("Log In Berhasil");
+                menuadmin menu = new menuadmin();
+                menu.setVisible(true);
+                this.dispose();
+            }else{
+                Pass.setText("");
+                Keterangan.setText("Log In Gagal");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LogIn2.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel3DAUNKANANMouseClicked
 

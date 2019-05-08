@@ -82,12 +82,14 @@ public class LogIn extends javax.swing.JFrame {
         // TODO add your handling code here:
         form form1 = new form();
         form1.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
         // TODO add your handling code here:
         LogIn2 form1 = new LogIn2();
         form1.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel2MousePressed
 
     /**

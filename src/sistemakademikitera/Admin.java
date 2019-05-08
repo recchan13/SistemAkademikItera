@@ -53,7 +53,7 @@ public class Admin {
         }
     }
     
-    
+    public boolean cek=false;
     
     public void menu (Connection con) throws SQLException{
         System.out.println("1. Mendaftarkan admin baru");
