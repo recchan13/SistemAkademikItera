@@ -53,14 +53,22 @@ public class Admin {
         }
     }
     
+    public boolean cek=false;
+    
     public void menu (Connection con) throws SQLException{
-        System.out.println("1. mendaftarkan admin baru");
+        System.out.println("1. Mendaftarkan admin baru");
+        System.out.println("2. Penambahan jadwal");
+        System.out.println("3. Pengembalian barang");
         System.out.println("pilihan : ");
         
         Integer input=sc.nextInt();
         
         if (input==1){
             this.tambah(con);
+        }else if (input==2){
+            
+        }else if (input==3){
+            
         }
     }
     
@@ -74,4 +82,5 @@ public class Admin {
         
         System.out.println("isi log" + log);
     }
+    
 }

@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
+import java.util.Scanner;
 
 /**
  *
@@ -21,12 +22,12 @@ public class Mahasiswa {
     
     public Mahasiswa(String nim) {
         this.nim=nim;
-//        this.nama=nama;
+        this.nama="";
 //        this.prodi=prodi;
     }
     
     //untuk cek apakah mahasiswa tsb terdaftar atau tidak
-    public void terdaftar (Connection con) throws SQLException{
+    public boolean terdaftar (Connection con) throws SQLException{
         Statement stmt = con.createStatement();
         String query="SELECT * FROM mahasiswa";
         ResultSet rs = stmt.executeQuery(query);
@@ -41,12 +42,37 @@ public class Mahasiswa {
             namaFromDb=rs.getString("nama");
             ada.put(nimFromDb, namaFromDb);
         }
-        
-        if (nim.equals(nimFromDb)){
+        if (ada.get(nim)!=null){
             this.nama=ada.get(nim);
-            System.out.println(ada.get(nim));
+//            System.out.println(nama);
+            return true;
         }else{
             System.out.println("maaf anda bukan mahasiswa IF ITERA");
+            return false;
+        }
+    }
+    
+    public void pilihBarangRuang (Connection con) throws SQLException{
+        Scanner sc = new Scanner(System.in);
+            String nama="";
+//            int jml = 0;
+        
+        Barang barang = new Barang(nama);
+//        ArrayList<Barang> brng =new ArrayList();
+        
+        System.out.println("pilih barang : ");
+        int pilihan = sc.nextInt();
+        if (pilihan==1){
+            //user milih barang
+            //manggil kelas barang
+            nama=sc.next();
+            barang.pilihBarang(con,nama);
+            
+        }else if (pilihan==2){
+            //user milih ruang
+            //manggil kelas ruang atau jadwal
+            
+            
         }
     }
 }
