@@ -110,6 +110,11 @@ public class form extends javax.swing.JFrame {
                 nimActionPerformed(evt);
             }
         });
+        nim.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nimKeyPressed(evt);
+            }
+        });
         getContentPane().add(nim, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 240, 30));
 
         jLabel2.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
@@ -146,8 +151,9 @@ public class form extends javax.swing.JFrame {
         
         try {
             if(mhs.terdaftar(con)){
-                formasli form = new formasli();
+                formasli form = new formasli(mhs.nama,mhs.nim);
                 form.setVisible(true);
+                this.dispose();
                 form.nama=mhs.nama;
                 jLabel1.setText(mhs.nama);
                 
@@ -170,13 +176,16 @@ public class form extends javax.swing.JFrame {
         
         try {
             if(mhs.terdaftar(con)){
-                formasli form = new formasli();
+                formasli form = new formasli(mhs.nama,mhs.nim);
                 form.setVisible(true);
+                this.dispose();
                 form.nama=mhs.nama;
                 jLabel1.setText(mhs.nama);
                 
                 Ket.setText("SELAMAT DATANG");
                 Ket1.setText("");
+                
+                
             }else{
                 nim.setText("");
                 Ket.setText("");
@@ -205,6 +214,31 @@ public class form extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_nimActionPerformed
+
+    private void nimKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nimKeyPressed
+        // TODO add your handling code here:
+        
+        if (evt.getKeyCode()==10){
+            Mahasiswa mhs=new Mahasiswa(nim.getText());
+            
+            try {
+                if(mhs.terdaftar(con)){
+                    formasli form = new formasli(mhs.nama,mhs.nim);
+                    form.nama=mhs.nama;
+                    jLabel1.setText(mhs.nama);
+                            
+                    Ket.setText("SELAMAT DATANG");
+                    Ket1.setText("");
+                }else{
+                    nim.setText("");
+                    Ket.setText("");
+                    Ket1.setText("Maaf Anda Bukan Mahasiswa/i IF Itera");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(form.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_nimKeyPressed
 
     /**
      * @param args the command line arguments

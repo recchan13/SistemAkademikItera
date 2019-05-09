@@ -5,6 +5,8 @@
  */
 package sistemakademikitera;
 
+import java.awt.HeadlessException;
+
 /**
  *
  * @author Alle
@@ -17,8 +19,13 @@ public class formasli extends javax.swing.JFrame {
     public String nama;
     public String nim;
     public String kriteria;
-    public formasli() {
+    public formasli(String nama, String nim) {
         initComponents();
+        this.nama=nama;
+        this.nim=nim;
+        
+        namaa.setText(nama);
+        nimm.setText(nim);
     }
 
     /**
@@ -44,7 +51,6 @@ public class formasli extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         aksidaun = new javax.swing.JLabel();
         submit = new javax.swing.JLabel();
-        lope = new javax.swing.JLabel();
         namaa = new javax.swing.JLabel();
         nimm = new javax.swing.JLabel();
         merah = new javax.swing.JLabel();
@@ -148,16 +154,6 @@ public class formasli extends javax.swing.JFrame {
         });
         jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 580, -1, -1));
 
-        lope.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/butt.png"))); // NOI18N
-        lope.setText("jLabel17");
-        lope.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lope.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lopeMouseClicked(evt);
-            }
-        });
-        jPanel1.add(lope, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 60, -1));
-
         namaa.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
         namaa.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(namaa, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 106, 230, 30));
@@ -221,13 +217,6 @@ public class formasli extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_submitjLabel15MouseClicked
 
-    private void lopeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lopeMouseClicked
-        // TODO add your handling code here:
-
-        namaa.setText(nama);
-        nimm.setText(nim);
-    }//GEN-LAST:event_lopeMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -258,7 +247,7 @@ public class formasli extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new formasli().setVisible(true);
+//                new formasli().setVisible(true);
             }
         });
     }
@@ -276,7 +265,6 @@ public class formasli extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lBarang;
     private javax.swing.JLabel lRuang;
-    private javax.swing.JLabel lope;
     private javax.swing.JLabel merah;
     private javax.swing.JLabel namaa;
     private javax.swing.JLabel nimm;
