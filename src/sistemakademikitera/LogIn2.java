@@ -61,7 +61,7 @@ public class LogIn2 extends javax.swing.JFrame {
         Keterangan.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         Keterangan.setForeground(new java.awt.Color(255, 255, 255));
         Keterangan.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(Keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 670, 190, 40));
+        getContentPane().add(Keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 330, 40));
 
         Unamee.setBackground(new java.awt.Color(220, 198, 139));
         Unamee.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
@@ -78,10 +78,10 @@ public class LogIn2 extends javax.swing.JFrame {
         Pass.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, 30));
 
-        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Log In Admin");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
 
         DAUNKANAN.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
         DAUNKANAN.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,7 +129,7 @@ public class LogIn2 extends javax.swing.JFrame {
 
         background.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         background.setForeground(new java.awt.Color(255, 255, 255));
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/ygini2.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/blue-blue-hour-bright-633811 (2).jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

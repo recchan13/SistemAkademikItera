@@ -47,8 +47,10 @@ public class formasli extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         lRuang = new javax.swing.JLabel();
         lBarang = new javax.swing.JLabel();
+        ruang1 = new javax.swing.JLabel();
         ruang = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        barang2 = new javax.swing.JLabel();
+        barang = new javax.swing.JLabel();
         aksidaun = new javax.swing.JLabel();
         submit = new javax.swing.JLabel();
         namaa = new javax.swing.JLabel();
@@ -58,7 +60,7 @@ public class formasli extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("FORM PEMINJAMAN");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
@@ -87,12 +89,12 @@ public class formasli extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("B. Keterangan Pinjaman");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Kategori Pinjaman");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 278, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
 
         lRuang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/room.png"))); // NOI18N
         lRuang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -112,6 +114,16 @@ public class formasli extends javax.swing.JFrame {
         });
         jPanel1.add(lBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, -1, -1));
 
+        ruang1.setFont(new java.awt.Font("Agency FB", 1, 21)); // NOI18N
+        ruang1.setForeground(new java.awt.Color(204, 0, 0));
+        ruang1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ruang1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ruang1jLabel8MouseClicked(evt);
+            }
+        });
+        jPanel1.add(ruang1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 60, 30));
+
         ruang.setFont(new java.awt.Font("Agency FB", 1, 21)); // NOI18N
         ruang.setForeground(new java.awt.Color(255, 255, 255));
         ruang.setText("Ruangan");
@@ -123,16 +135,27 @@ public class formasli extends javax.swing.JFrame {
         });
         jPanel1.add(ruang, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, -1, 30));
 
-        jLabel11.setFont(new java.awt.Font("Agency FB", 1, 21)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Barang");
-        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+        barang2.setFont(new java.awt.Font("Agency FB", 1, 21)); // NOI18N
+        barang2.setForeground(new java.awt.Color(255, 0, 0));
+        barang2.setText(" ");
+        barang2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        barang2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11jLabel9MouseClicked(evt);
+                barang2jLabel9MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, -1, -1));
+        jPanel1.add(barang2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 60, -1));
+
+        barang.setFont(new java.awt.Font("Agency FB", 1, 21)); // NOI18N
+        barang.setForeground(new java.awt.Color(255, 255, 255));
+        barang.setText("Barang");
+        barang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        barang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                barangjLabel9MouseClicked(evt);
+            }
+        });
+        jPanel1.add(barang, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, -1, -1));
 
         aksidaun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/Thanksgiving_Add_-_On-09-512.png"))); // NOI18N
         aksidaun.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -176,13 +199,16 @@ public class formasli extends javax.swing.JFrame {
         // TODO add your handling code here:
         // IDruangan.setText("ID Ruangan");
         kriteria="Ruang";
-        
+        ruang1.setText("Ruangan");
+        barang2.setText("");
     }//GEN-LAST:event_lRuangMouseClicked
 
     private void lBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lBarangMouseClicked
         // TODO add your handling code here:
         // IDruangan.setText("ID Barang");
         kriteria="Barang";
+        ruang1.setText("");
+        barang2.setText("Barang");
     }//GEN-LAST:event_lBarangMouseClicked
 
     private void ruangjLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ruangjLabel8MouseClicked
@@ -190,10 +216,10 @@ public class formasli extends javax.swing.JFrame {
         // IDruangan.setText("ID Ruangan");
     }//GEN-LAST:event_ruangjLabel8MouseClicked
 
-    private void jLabel11jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11jLabel9MouseClicked
+    private void barangjLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barangjLabel9MouseClicked
         // TODO add your handling code here:
         // IDruangan.setText("ID Barang");
-    }//GEN-LAST:event_jLabel11jLabel9MouseClicked
+    }//GEN-LAST:event_barangjLabel9MouseClicked
 
     private void aksidaunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aksidaunMouseClicked
         // TODO add your handling code here:
@@ -216,6 +242,14 @@ public class formasli extends javax.swing.JFrame {
             form.setVisible(true);
         }
     }//GEN-LAST:event_submitjLabel15MouseClicked
+
+    private void ruang1jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ruang1jLabel8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ruang1jLabel8MouseClicked
+
+    private void barang2jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barang2jLabel9MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_barang2jLabel9MouseClicked
 
     /**
      * @param args the command line arguments
@@ -254,8 +288,9 @@ public class formasli extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aksidaun;
+    private javax.swing.JLabel barang;
+    private javax.swing.JLabel barang2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -269,6 +304,7 @@ public class formasli extends javax.swing.JFrame {
     private javax.swing.JLabel namaa;
     private javax.swing.JLabel nimm;
     private javax.swing.JLabel ruang;
+    private javax.swing.JLabel ruang1;
     private javax.swing.JLabel submit;
     // End of variables declaration//GEN-END:variables
 }
