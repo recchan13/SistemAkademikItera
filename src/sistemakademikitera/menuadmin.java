@@ -31,80 +31,135 @@ public class menuadmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        tambahadmin = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        tambahadmin1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        gam1 = new javax.swing.JLabel();
+        gam2 = new javax.swing.JLabel();
+        gam3 = new javax.swing.JLabel();
+        pengbarang1 = new javax.swing.JLabel();
+        pengbarang = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        upjadwal1 = new javax.swing.JLabel();
+        upjadwal = new javax.swing.JLabel();
+        tamadmin1 = new javax.swing.JLabel();
+        tamadmin = new javax.swing.JLabel();
+        bcgrnd = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/healthjjj.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 150, -1));
-
-        tambahadmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/health.png"))); // NOI18N
-        tambahadmin.setText("jLabel4");
-        tambahadmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        tambahadmin.addMouseListener(new java.awt.event.MouseAdapter() {
+        gam1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/healthjjj.png"))); // NOI18N
+        gam1.setText("jLabel2");
+        gam1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gam1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tambahadminMouseClicked(evt);
+                gam1MouseClicked(evt);
             }
         });
-        getContentPane().add(tambahadmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 150, -1));
+        getContentPane().add(gam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 150, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/pineapple-512.png"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 150, -1));
-
-        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Pengembalian Barang");
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, -1));
-
-        tambahadmin1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        tambahadmin1.setForeground(new java.awt.Color(255, 255, 255));
-        tambahadmin1.setText("Tambah Admin");
-        tambahadmin1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        tambahadmin1.addMouseListener(new java.awt.event.MouseAdapter() {
+        gam2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/health.png"))); // NOI18N
+        gam2.setText("jLabel4");
+        gam2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gam2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tambahadminMouseClicked(evt);
+                gam2MouseClicked(evt);
             }
         });
-        getContentPane().add(tambahadmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
+        getContentPane().add(gam2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 150, -1));
 
-        jLabel6.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Update Jadwal");
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
+        gam3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/pineapple-512.png"))); // NOI18N
+        gam3.setText("jLabel5");
+        gam3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gam3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                gam3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(gam3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 150, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/backlit-color-colour-145805.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 753, -1));
+        pengbarang1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        pengbarang1.setForeground(new java.awt.Color(204, 0, 0));
+        pengbarang1.setText(" ");
+        pengbarang1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(pengbarang1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 190, -1));
+
+        pengbarang.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        pengbarang.setForeground(new java.awt.Color(255, 255, 255));
+        pengbarang.setText("Pengembalian Barang");
+        pengbarang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pengbarang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                gam3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(pengbarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("SELAMAT DATANG DI MENU ADMIN");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, -1, -1));
+
+        upjadwal1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        upjadwal1.setForeground(new java.awt.Color(204, 0, 0));
+        upjadwal1.setText(" ");
+        upjadwal1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(upjadwal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 130, -1));
+
+        upjadwal.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        upjadwal.setForeground(new java.awt.Color(255, 255, 255));
+        upjadwal.setText("Update Jadwal");
+        upjadwal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        upjadwal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                gam1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(upjadwal, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
+
+        tamadmin1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        tamadmin1.setForeground(new java.awt.Color(204, 0, 0));
+        tamadmin1.setText(" ");
+        tamadmin1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(tamadmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 130, -1));
+
+        tamadmin.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        tamadmin.setForeground(new java.awt.Color(255, 255, 255));
+        tamadmin.setText("Tambah Admin");
+        tamadmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tamadmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                gam2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(tamadmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
+
+        bcgrnd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/backlit-color-colour-145805.jpg"))); // NOI18N
+        bcgrnd.setText("jLabel1");
+        getContentPane().add(bcgrnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 753, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tambahadminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tambahadminMouseClicked
+    private void gam1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gam1MouseClicked
         // TODO add your handling code here:
-        
-//        Admin adm=new Admin(jTextField1.getText(),jTextField2.getText());
-        
-//        try {
-//            adm.tambah(con);
-//        } catch (SQLException ex) {
-//            Logger.getLogger(tambahadmin.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        tambahadmin tambah = new tambahadmin();
-        tambah.setVisible(true);
-    }//GEN-LAST:event_tambahadminMouseClicked
+        upjadwal1.setText("Update Jadwal");
+        pengbarang1.setText("");
+        tamadmin1.setText("");
+    }//GEN-LAST:event_gam1MouseClicked
+
+    private void gam2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gam2MouseClicked
+        // TODO add your handling code here:
+        upjadwal1.setText("");
+        pengbarang1.setText("");
+        tamadmin1.setText("Tambah Admin");
+    }//GEN-LAST:event_gam2MouseClicked
+
+    private void gam3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gam3MouseClicked
+        // TODO add your handling code here:
+        upjadwal1.setText("");
+        pengbarang1.setText("Pengembalian Barang");
+        tamadmin1.setText("");
+    }//GEN-LAST:event_gam3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -142,12 +197,16 @@ public class menuadmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel tambahadmin;
-    private javax.swing.JLabel tambahadmin1;
+    private javax.swing.JLabel bcgrnd;
+    private javax.swing.JLabel gam1;
+    private javax.swing.JLabel gam2;
+    private javax.swing.JLabel gam3;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel pengbarang;
+    private javax.swing.JLabel pengbarang1;
+    private javax.swing.JLabel tamadmin;
+    private javax.swing.JLabel tamadmin1;
+    private javax.swing.JLabel upjadwal;
+    private javax.swing.JLabel upjadwal1;
     // End of variables declaration//GEN-END:variables
 }

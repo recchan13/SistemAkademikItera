@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Alle
@@ -117,10 +118,10 @@ public class form extends javax.swing.JFrame {
         });
         getContentPane().add(nim, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 240, 30));
 
-        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Log In Mahasiswa");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
 
         Ket.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         Ket.setForeground(new java.awt.Color(255, 255, 255));
@@ -138,7 +139,7 @@ public class form extends javax.swing.JFrame {
 
         background.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         background.setForeground(new java.awt.Color(255, 255, 255));
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/ygini2.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/blue-blue-hour-bright-633811 (2).jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -162,7 +163,8 @@ public class form extends javax.swing.JFrame {
             }else{
                 nim.setText("");
                 Ket.setText("");
-                Ket1.setText("Maaf Anda Bukan Mahasiswa/i IF Itera");
+                Ket1.setText("LOG IN GAGAL");
+                JOptionPane.showMessageDialog(null, "Maaf anda tidak terdaftar di Itera");
             }
         } catch (SQLException ex) {
             Logger.getLogger(form.class.getName()).log(Level.SEVERE, null, ex);

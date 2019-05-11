@@ -20,7 +20,7 @@ public class SistemAkademikItera {
      */
     public static void main(String[] args) throws SQLException {
         KonekDB mKonekDB = new KonekDB();
-        Connection con=mKonekDB.getConnection();
+        Connection con = mKonekDB.getConnection();
         
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
