@@ -15,9 +15,10 @@ import java.util.logging.Logger;
  * @author GOCCHAN
  */
 public class tambahadmin extends javax.swing.JFrame {
-    Connection con=null;
+    Connection con=new KonekDB().getConnection();
     String uname;
     String pass;
+    
     /**
      * Creates new form tambahadmin
      */
@@ -36,6 +37,8 @@ public class tambahadmin extends javax.swing.JFrame {
 
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
         keterangan = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -54,8 +57,14 @@ public class tambahadmin extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Masukan Username Admin Baru ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
+        jLabel2.setText("Masukan Lokasi Admin Baru ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Masukan Username Admin Baru ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 227, -1));
 
         keterangan.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
         keterangan.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,13 +102,11 @@ public class tambahadmin extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here
-        Admin adm=new Admin(jTextField1.getText(),jTextField2.getText());
-        
-//        uname=jTextField1.getText();
-//        pass=jTextField2.getText();
-        
+        Admin admin=new Admin(jTextField1.getText(),jTextField2.getText());
+        admin.loc=Integer.parseInt(jTextField3.getText());
+
         try {
-            adm.tambah(con);
+            admin.tambah(con);
         } catch (SQLException ex) {
             Logger.getLogger(tambahadmin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -145,11 +152,13 @@ public class tambahadmin extends javax.swing.JFrame {
     private javax.swing.JLabel bcg;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel keterangan;
     // End of variables declaration//GEN-END:variables
 }

@@ -152,6 +152,10 @@ public class menuadmin extends javax.swing.JFrame {
         upjadwal1.setText("");
         pengbarang1.setText("");
         tamadmin1.setText("Tambah Admin");
+        
+        tambahadmin tambah=new tambahadmin();
+        tambah.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_gam2MouseClicked
 
     private void gam3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gam3MouseClicked
@@ -159,6 +163,8 @@ public class menuadmin extends javax.swing.JFrame {
         upjadwal1.setText("");
         pengbarang1.setText("Pengembalian Barang");
         tamadmin1.setText("");
+        
+        
     }//GEN-LAST:event_gam3MouseClicked
 
     /**
