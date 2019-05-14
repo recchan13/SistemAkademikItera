@@ -55,9 +55,11 @@ public class Mahasiswa {
     public void pilihBarangRuang (Connection con) throws SQLException{
         Scanner sc = new Scanner(System.in);
             String nama="";
-//            int jml = 0;
+            int jml=0;
+            int id=0;
+            //nanti ini di ubah jadi scanner
         
-        Barang barang = new Barang(nama);
+        Barang barang = new Barang(jml, id, nama);
 //        ArrayList<Barang> brng =new ArrayList();
         
         System.out.println("pilih barang : ");
