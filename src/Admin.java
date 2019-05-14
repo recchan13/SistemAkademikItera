@@ -18,7 +18,7 @@ import java.util.TreeMap;
  *
  * @author GOCCHAN
  */
-public class Admin {
+public class Admin extends Abs {
     String username; 
     String pass;
     int loc;
