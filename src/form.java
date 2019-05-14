@@ -5,17 +5,23 @@
  */
 package sistemakademikitera;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Alle
  */
 public class form extends javax.swing.JFrame {
-
+    Connection con=null;
     /**
      * Creates new form form
      */
     public form() {
         initComponents();
+        con=new KonekDB().getConnection();
     }
 
     /**
@@ -37,7 +43,7 @@ public class form extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Ket = new javax.swing.JLabel();
         Ket1 = new javax.swing.JLabel();
-        nama2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,12 +96,12 @@ public class form extends javax.swing.JFrame {
         uname.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         uname.setForeground(new java.awt.Color(255, 255, 255));
         uname.setText("NIM");
-        getContentPane().add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
+        getContentPane().add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
 
         uname1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         uname1.setForeground(new java.awt.Color(255, 255, 255));
         uname1.setText("Name");
-        getContentPane().add(uname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
+        getContentPane().add(uname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
 
         nim.setBackground(new java.awt.Color(220, 198, 139));
         nim.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
@@ -105,12 +111,17 @@ public class form extends javax.swing.JFrame {
                 nimActionPerformed(evt);
             }
         });
-        getContentPane().add(nim, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 240, 30));
+        nim.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nimKeyPressed(evt);
+            }
+        });
+        getContentPane().add(nim, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 240, 30));
 
-        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Log In Mahasiswa");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
 
         Ket.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         Ket.setForeground(new java.awt.Color(255, 255, 255));
@@ -122,19 +133,13 @@ public class form extends javax.swing.JFrame {
         Ket1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(Ket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 320, 40));
 
-        nama2.setBackground(new java.awt.Color(220, 198, 139));
-        nama2.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        nama2.setForeground(new java.awt.Color(255, 255, 255));
-        nama2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nama2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(nama2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 240, 30));
+        jLabel1.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 240, 30));
 
         background.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         background.setForeground(new java.awt.Color(255, 255, 255));
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/ygini2.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/blue-blue-hour-bright-633811 (2).jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -142,34 +147,54 @@ public class form extends javax.swing.JFrame {
 
     private void daun1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daun1MouseClicked
         // TODO add your handling code here:
-        if(nama2.getText().equals("admin")&&nim.getText().equals("1234")){
-            Ket.setText("SELAMAT DATANG");
-            Ket1.setText("");
-            formasli form = new formasli();
-            form.setVisible(true);
-            form.nama=nama2.getText();
-            form.nim=nim.getText();
-        }else{
-            nim.setText("");
-            Ket.setText("");
-            Ket1.setText("Maaf Anda Bukan Mahasiswa/i IF Itera");
+        Mahasiswa mhs=new Mahasiswa(nim.getText());
+        System.out.println("nim "+nim.getText());
+        
+        try {
+            if(mhs.terdaftar(con)){
+                formasli form = new formasli(mhs.nama,mhs.nim);
+                form.setVisible(true);
+                this.dispose();
+                form.nama=mhs.nama;
+                jLabel1.setText(mhs.nama);
+                
+                Ket.setText("SELAMAT DATANG");
+                Ket1.setText("");
+            }else{
+                nim.setText("");
+                Ket.setText("");
+                Ket1.setText("LOG IN GAGAL");
+                JOptionPane.showMessageDialog(null, "Maaf anda tidak terdaftar di Itera");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(form.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_daun1MouseClicked
 
     private void daun12DAUNKANANMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daun12DAUNKANANMouseClicked
         // TODO add your handling code here:
-        if(nama2.getText().equals("admin")&& nim.getText().equals("1234")){
-            Ket.setText("SELAMAT DATANG");
-            Ket1.setText("");
-            formasli form = new formasli();
-            form.setVisible(true);
-            form.nama=nama2.getText();
-            form.nim=nim.getText();
-
-        }else{
-            nim.setText("");
-            Ket.setText("");
-            Ket1.setText("Maaf Anda Bukan Mahasiswa/i IF Itera");
+        Mahasiswa mhs=new Mahasiswa(nim.getText());
+        System.out.println("nim "+nim.getText());
+        
+        try {
+            if(mhs.terdaftar(con)){
+                formasli form = new formasli(mhs.nama,mhs.nim);
+                form.setVisible(true);
+                this.dispose();
+                form.nama=mhs.nama;
+                jLabel1.setText(mhs.nama);
+                
+                Ket.setText("SELAMAT DATANG");
+                Ket1.setText("");
+                
+                
+            }else{
+                nim.setText("");
+                Ket.setText("");
+                Ket1.setText("Maaf Anda Bukan Mahasiswa/i IF Itera");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(form.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_daun12DAUNKANANMouseClicked
 
@@ -177,12 +202,14 @@ public class form extends javax.swing.JFrame {
         // TODO add your handling code here:
         LogIn login = new LogIn();
         login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_daun21DAUNKIRIMouseClicked
 
     private void daun2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daun2MouseClicked
         // TODO add your handling code here:
         LogIn login = new LogIn();
         login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_daun2MouseClicked
 
     private void nimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimActionPerformed
@@ -190,10 +217,30 @@ public class form extends javax.swing.JFrame {
 
     }//GEN-LAST:event_nimActionPerformed
 
-    private void nama2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nama2ActionPerformed
+    private void nimKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nimKeyPressed
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_nama2ActionPerformed
+        
+        if (evt.getKeyCode()==10){
+            Mahasiswa mhs=new Mahasiswa(nim.getText());
+            
+            try {
+                if(mhs.terdaftar(con)){
+                    formasli form = new formasli(mhs.nama,mhs.nim);
+                    form.nama=mhs.nama;
+                    jLabel1.setText(mhs.nama);
+                            
+                    Ket.setText("SELAMAT DATANG");
+                    Ket1.setText("");
+                }else{
+                    nim.setText("");
+                    Ket.setText("");
+                    Ket1.setText("Maaf Anda Bukan Mahasiswa/i IF Itera");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(form.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_nimKeyPressed
 
     /**
      * @param args the command line arguments
@@ -238,8 +285,8 @@ public class form extends javax.swing.JFrame {
     private javax.swing.JLabel daun12;
     private javax.swing.JLabel daun2;
     private javax.swing.JLabel daun21;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField nama2;
     private javax.swing.JTextField nim;
     private javax.swing.JLabel uname;
     private javax.swing.JLabel uname1;
