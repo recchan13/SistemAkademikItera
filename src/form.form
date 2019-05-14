@@ -152,7 +152,7 @@
     <Component class="javax.swing.JTextField" name="nim">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="8b" green="c6" red="dc" type="rgb"/>
+          <Color blue="63" green="86" red="bb" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Agency FB" size="18" style="1"/>

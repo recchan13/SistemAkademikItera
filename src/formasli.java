@@ -226,6 +226,7 @@ public class formasli extends javax.swing.JFrame {
         if(kriteria.equals("Ruang") ){
             formasli2 form = new formasli2();
             form.setVisible(true);
+            this.dispose();
         }else{
             formasli1 form = new formasli1();
             form.setVisible(true);
@@ -237,6 +238,7 @@ public class formasli extends javax.swing.JFrame {
          if(kriteria.equals("Ruang") ){
             formasli2 form = new formasli2();
             form.setVisible(true);
+            this.dispose();
         }else{
             formasli1 form = new formasli1();
             form.setVisible(true);

@@ -103,7 +103,7 @@ public class form extends javax.swing.JFrame {
         uname1.setText("Name");
         getContentPane().add(uname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
 
-        nim.setBackground(new java.awt.Color(220, 198, 139));
+        nim.setBackground(new java.awt.Color(187, 134, 99));
         nim.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         nim.setForeground(new java.awt.Color(255, 255, 255));
         nim.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +160,7 @@ public class form extends javax.swing.JFrame {
                 
                 Ket.setText("SELAMAT DATANG");
                 Ket1.setText("");
+                
             }else{
                 nim.setText("");
                 Ket.setText("");
