@@ -5,19 +5,25 @@
  */
 package sistemakademikitera;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Alle
  */
 public class LogIn2 extends javax.swing.JFrame {
-
+    
+    Connection con=null;
     /**
      * Creates new form LogIn2
      */
     public LogIn2() {
         initComponents();
+        con=new KonekDB().getConnection();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,7 +61,7 @@ public class LogIn2 extends javax.swing.JFrame {
         Keterangan.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         Keterangan.setForeground(new java.awt.Color(255, 255, 255));
         Keterangan.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(Keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 670, 190, 40));
+        getContentPane().add(Keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 330, 40));
 
         Unamee.setBackground(new java.awt.Color(220, 198, 139));
         Unamee.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
@@ -72,10 +78,10 @@ public class LogIn2 extends javax.swing.JFrame {
         Pass.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, 30));
 
-        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Log In Admin");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
 
         DAUNKANAN.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
         DAUNKANAN.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,7 +129,7 @@ public class LogIn2 extends javax.swing.JFrame {
 
         background.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         background.setForeground(new java.awt.Color(255, 255, 255));
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/ygini2.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/blue-blue-hour-bright-633811 (2).jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -134,14 +140,21 @@ public class LogIn2 extends javax.swing.JFrame {
     }//GEN-LAST:event_UnameeActionPerformed
 
     private void DAUNKANANMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DAUNKANANMouseClicked
-        // TODO add your handling code here:
-        if(Unamee.getText().equals("admin")&&Pass.getText().equals("1234")){
-            Keterangan.setText("Log In Berhasil");
-            menuadmin menu = new menuadmin();
-            menu.setVisible(true);
-        }else{
-            Pass.setText("");
-            Keterangan.setText("Log In Gagal");
+        try {
+            // TODO add your handling code here:
+            Admin admin = new Admin(Unamee.getText(), Pass.getText());
+            
+            if(admin.login(con)){
+                Keterangan.setText("Log In Berhasil");
+                menuadmin menu = new menuadmin();
+                menu.setVisible(true);
+                this.dispose();
+            }else{
+                Pass.setText("");
+                Keterangan.setText("Log In Gagal");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LogIn2.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_DAUNKANANMouseClicked
 
@@ -149,23 +162,32 @@ public class LogIn2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         LogIn login = new LogIn();
         login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_DAUNKIRIMouseClicked
 
     private void DAUNBACKDAUNKIRIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DAUNBACKDAUNKIRIMouseClicked
         // TODO add your handling code here:
         LogIn login = new LogIn();
         login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_DAUNBACKDAUNKIRIMouseClicked
 
     private void jLabel3DAUNKANANMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3DAUNKANANMouseClicked
-        // TODO add your handling code here:
-        if(Unamee.getText().equals("admin")&&Pass.getText().equals("1234")){
-            Keterangan.setText("Log In Berhasil");
-            menuadmin menu = new menuadmin();
-            menu.setVisible(true);
-        }else{
-            Pass.setText("");
-            Keterangan.setText("Log In Gagal");
+        try {
+            // TODO add your handling code here:
+            Admin admin = new Admin(Unamee.getText(), Pass.getText());
+            
+            if(admin.login(con)){
+                Keterangan.setText("Log In Berhasil");
+                menuadmin menu = new menuadmin();
+                menu.setVisible(true);
+                this.dispose();
+            }else{
+                Pass.setText("");
+                Keterangan.setText("Log In Gagal");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LogIn2.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel3DAUNKANANMouseClicked
 
