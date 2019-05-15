@@ -39,15 +39,24 @@ public class Admin {
 
         String passFromDb="";
         String unameFromDb="";
+        int tempatAdminDb;
 
         //isi hashmap
         while(rs.next()){
             passFromDb=rs.getString("password");
             unameFromDb=rs.getString("username");
+            
             adm.put(unameFromDb, passFromDb);
         }
         
+        
         if (pass.equals(adm.get(username))){
+            query="SELECT * FROM `admin` WHERE `username` = '"+username+"'";
+            rs = stmt.executeQuery(query);
+            while(rs.next()){
+                tempatAdminDb=rs.getInt("tempat_peminjaman_id");
+                System.out.println(tempatAdminDb);
+            }
             return true;
         }else{
             return false;

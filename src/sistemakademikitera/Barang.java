@@ -32,6 +32,7 @@ public class Barang extends BarangPinjam {
         int jumlahFromDb;
         
         TreeMap<String,Integer> brg= new TreeMap<>();
+        
         while(rs.next()){
             namaFromDb=rs.getString("nama");
             jumlahFromDb=rs.getInt("jumlah_stok");

@@ -162,7 +162,7 @@ public class menuadmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         upjadwal1.setText("");
         pengbarang1.setText("Pengembalian Barang");
-        tamadmin1.setText("");
+        tamadmin1.setText(""); 
         
         
     }//GEN-LAST:event_gam3MouseClicked
