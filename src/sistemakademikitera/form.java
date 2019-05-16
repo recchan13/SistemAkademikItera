@@ -6,7 +6,11 @@
 package sistemakademikitera;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -16,6 +20,7 @@ import javax.swing.JOptionPane;
  */
 public class form extends javax.swing.JFrame {
     Connection con=null;
+    
     /**
      * Creates new form form
      */
@@ -38,11 +43,14 @@ public class form extends javax.swing.JFrame {
         daun21 = new javax.swing.JLabel();
         daun2 = new javax.swing.JLabel();
         uname = new javax.swing.JLabel();
+        uname2 = new javax.swing.JLabel();
         uname1 = new javax.swing.JLabel();
+        tempat = new javax.swing.JTextField();
         nim = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         Ket = new javax.swing.JLabel();
         Ket1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
@@ -58,7 +66,7 @@ public class form extends javax.swing.JFrame {
                 daun1MouseClicked(evt);
             }
         });
-        getContentPane().add(daun1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 470, -1, 40));
+        getContentPane().add(daun1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 550, -1, 40));
 
         daun12.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         daun12.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,7 +77,7 @@ public class form extends javax.swing.JFrame {
                 daun12DAUNKANANMouseClicked(evt);
             }
         });
-        getContentPane().add(daun12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 520, -1, -1));
+        getContentPane().add(daun12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 600, -1, -1));
 
         daun21.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         daun21.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,7 +88,7 @@ public class form extends javax.swing.JFrame {
                 daun21DAUNKIRIMouseClicked(evt);
             }
         });
-        getContentPane().add(daun21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, -1, -1));
+        getContentPane().add(daun21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, -1, -1));
 
         daun2.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
         daun2.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,22 +99,41 @@ public class form extends javax.swing.JFrame {
                 daun2MouseClicked(evt);
             }
         });
-        getContentPane().add(daun2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 50, 40));
+        getContentPane().add(daun2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, 50, 40));
 
         uname.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         uname.setForeground(new java.awt.Color(255, 255, 255));
         uname.setText("NIM");
         getContentPane().add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
 
+        uname2.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        uname2.setForeground(new java.awt.Color(255, 255, 255));
+        uname2.setText("Tempat Peminjaman");
+        getContentPane().add(uname2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, -1));
+
         uname1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         uname1.setForeground(new java.awt.Color(255, 255, 255));
         uname1.setText("Name");
         getContentPane().add(uname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
 
-        nim.setBackground(new java.awt.Color(187, 134, 99));
+        tempat.setBackground(new java.awt.Color(220, 198, 139));
+        tempat.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        tempat.setForeground(new java.awt.Color(255, 255, 255));
+        tempat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tempatActionPerformed(evt);
+            }
+        });
+        tempat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tempatKeyPressed(evt);
+            }
+        });
+        getContentPane().add(tempat, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 130, 30));
+
+        nim.setBackground(new java.awt.Color(220, 198, 139));
         nim.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         nim.setForeground(new java.awt.Color(255, 255, 255));
-        nim.setBorder(null);
         nim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nimActionPerformed(evt);
@@ -122,17 +149,21 @@ public class form extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Log In Mahasiswa");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
 
         Ket.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         Ket.setForeground(new java.awt.Color(255, 255, 255));
         Ket.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(Ket, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 180, 40));
+        getContentPane().add(Ket, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 670, 190, 40));
 
         Ket1.setFont(new java.awt.Font("Agency FB", 1, 26)); // NOI18N
         Ket1.setForeground(new java.awt.Color(255, 255, 255));
         Ket1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(Ket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 220, 40));
+        getContentPane().add(Ket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 320, 40));
+
+        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 220, 40));
 
         jLabel1.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -161,7 +192,6 @@ public class form extends javax.swing.JFrame {
                 
                 Ket.setText("SELAMAT DATANG");
                 Ket1.setText("");
-                
             }else{
                 nim.setText("");
                 Ket.setText("");
@@ -188,8 +218,6 @@ public class form extends javax.swing.JFrame {
                 
                 Ket.setText("SELAMAT DATANG");
                 Ket1.setText("");
-                
-                
             }else{
                 nim.setText("");
                 Ket.setText("");
@@ -233,6 +261,7 @@ public class form extends javax.swing.JFrame {
                             
                     Ket.setText("SELAMAT DATANG");
                     Ket1.setText("");
+//                    this.tempatActionPerformed(null);
                 }else{
                     nim.setText("");
                     Ket.setText("");
@@ -243,6 +272,26 @@ public class form extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_nimKeyPressed
+
+    private void tempatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempatActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_tempatActionPerformed
+
+    private void tempatKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tempatKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode()==10){
+            Mahasiswa mhs=new Mahasiswa(nim.getText());
+            
+            try {
+                mhs.inputLoc=Integer.parseInt(tempat.getText());
+//                System.out.println(mhs.inputLoc);
+                jLabel3.setText(mhs.tempatPinjam(con));
+            } catch (SQLException ex) {
+                Logger.getLogger(form.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_tempatKeyPressed
 
     /**
      * @param args the command line arguments
@@ -289,8 +338,11 @@ public class form extends javax.swing.JFrame {
     private javax.swing.JLabel daun21;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField nim;
+    private javax.swing.JTextField tempat;
     private javax.swing.JLabel uname;
     private javax.swing.JLabel uname1;
+    private javax.swing.JLabel uname2;
     // End of variables declaration//GEN-END:variables
 }

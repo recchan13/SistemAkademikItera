@@ -53,6 +53,11 @@ public class tambahadmin extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/daun1.png"))); // NOI18N
         jLabel5.setText("jLabel5");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 50, -1));
 
         jLabel2.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
@@ -113,6 +118,14 @@ public class tambahadmin extends javax.swing.JFrame {
         keterangan.setText("Selesai");
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here
+        menuadmin mnadmin=new menuadmin();
+        
+        mnadmin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel5MouseClicked
+    
     /**
      * @param args the command line arguments
      */

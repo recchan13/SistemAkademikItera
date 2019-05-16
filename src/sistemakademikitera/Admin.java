@@ -30,7 +30,7 @@ public class Admin extends Abs {
         this.username=username;
         this.pass=pass;
     }
-    
+    @Override
     public boolean login (Connection con) throws SQLException{
         Statement stmt = con.createStatement();
         String query="SELECT * FROM admin";
@@ -39,20 +39,35 @@ public class Admin extends Abs {
 
         String passFromDb="";
         String unameFromDb="";
+        int tempatAdminDb;
 
         //isi hashmap
         while(rs.next()){
             passFromDb=rs.getString("password");
             unameFromDb=rs.getString("username");
+            
             adm.put(unameFromDb, passFromDb);
         }
         
+        
         if (pass.equals(adm.get(username))){
+            query="SELECT * FROM `admin` WHERE `username` = '"+username+"'";
+            rs = stmt.executeQuery(query);
+            while(rs.next()){
+                tempatAdminDb=rs.getInt("tempat_peminjaman_id");
+                loc=tempatAdminDb;
+                System.out.println(tempatAdminDb);
+            }
             return true;
         }else{
             return false;
         }
     }
+    
+//    public int getLoc() {
+//        System.out.println(loc);
+//        return loc;
+//    }
     
     public void menu (Connection con) throws SQLException{
         System.out.println("1. Mendaftarkan admin baru");
