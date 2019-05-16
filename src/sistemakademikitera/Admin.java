@@ -30,7 +30,7 @@ public class Admin {
         this.username=username;
         this.pass=pass;
     }
-    
+
     public boolean login (Connection con) throws SQLException{
         Statement stmt = con.createStatement();
         String query="SELECT * FROM admin";
@@ -55,6 +55,7 @@ public class Admin {
             rs = stmt.executeQuery(query);
             while(rs.next()){
                 tempatAdminDb=rs.getInt("tempat_peminjaman_id");
+                loc=tempatAdminDb;
                 System.out.println(tempatAdminDb);
             }
             return true;
@@ -62,6 +63,11 @@ public class Admin {
             return false;
         }
     }
+    
+//    public int getLoc() {
+//        System.out.println(loc);
+//        return loc;
+//    }
     
     public void menu (Connection con) throws SQLException{
         System.out.println("1. Mendaftarkan admin baru");
