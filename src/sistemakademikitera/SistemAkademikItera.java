@@ -30,8 +30,8 @@ public class SistemAkademikItera {
         String nim = sc.next();
         Mahasiswa mahasiswa = new Mahasiswa(nim);
 
-        mahasiswa.login(con);
-        if(mahasiswa.login(con)){
+        mahasiswa.terdaftar(con);
+        if(mahasiswa.terdaftar(con)){
             //alihkan ke form
             mahasiswa.pilihBarangRuang(con);
         }else{

@@ -32,7 +32,6 @@ public class formasli2 extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        monday1 = new javax.swing.JLabel();
         monday = new javax.swing.JLabel();
         tuesday = new javax.swing.JLabel();
         wednesday = new javax.swing.JLabel();
@@ -73,15 +72,6 @@ public class formasli2 extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Hari yang diinginkan");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
-
-        monday1.setText(" ");
-        monday1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        monday1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                monday1MouseClicked(evt);
-            }
-        });
-        jPanel1.add(monday1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 60, 70));
 
         monday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-monday-64.png"))); // NOI18N
         monday.setText("jLabel2");
@@ -137,7 +127,7 @@ public class formasli2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    String[] mondayna ={ "icons8-monday-64 - Copy", "icons8-monday-64"};
+
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel15MouseClicked
@@ -148,7 +138,6 @@ public class formasli2 extends javax.swing.JFrame {
 
     private void mondayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mondayMouseClicked
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_mondayMouseClicked
 
     private void tuesdayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tuesdayMouseClicked
@@ -166,10 +155,6 @@ public class formasli2 extends javax.swing.JFrame {
     private void fridayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fridayMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_fridayMouseClicked
-
-    private void monday1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_monday1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_monday1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -214,7 +199,6 @@ public class formasli2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel monday;
-    private javax.swing.JLabel monday1;
     private javax.swing.JLabel thursday;
     private javax.swing.JLabel tuesday;
     private javax.swing.JLabel wednesday;

@@ -103,10 +103,9 @@ public class form extends javax.swing.JFrame {
         uname1.setText("Name");
         getContentPane().add(uname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
 
-        nim.setBackground(new java.awt.Color(187, 134, 99));
+        nim.setBackground(new java.awt.Color(220, 198, 139));
         nim.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         nim.setForeground(new java.awt.Color(255, 255, 255));
-        nim.setBorder(null);
         nim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nimActionPerformed(evt);
@@ -127,12 +126,12 @@ public class form extends javax.swing.JFrame {
         Ket.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         Ket.setForeground(new java.awt.Color(255, 255, 255));
         Ket.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(Ket, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 180, 40));
+        getContentPane().add(Ket, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 670, 190, 40));
 
         Ket1.setFont(new java.awt.Font("Agency FB", 1, 26)); // NOI18N
         Ket1.setForeground(new java.awt.Color(255, 255, 255));
         Ket1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(Ket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 220, 40));
+        getContentPane().add(Ket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 320, 40));
 
         jLabel1.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,7 +151,7 @@ public class form extends javax.swing.JFrame {
         System.out.println("nim "+nim.getText());
         
         try {
-            if(mhs.login(con)){
+            if(mhs.terdaftar(con)){
                 formasli form = new formasli(mhs.nama,mhs.nim);
                 form.setVisible(true);
                 this.dispose();
@@ -161,7 +160,6 @@ public class form extends javax.swing.JFrame {
                 
                 Ket.setText("SELAMAT DATANG");
                 Ket1.setText("");
-                
             }else{
                 nim.setText("");
                 Ket.setText("");
@@ -179,7 +177,7 @@ public class form extends javax.swing.JFrame {
         System.out.println("nim "+nim.getText());
         
         try {
-            if(mhs.login(con)){
+            if(mhs.terdaftar(con)){
                 formasli form = new formasli(mhs.nama,mhs.nim);
                 form.setVisible(true);
                 this.dispose();
@@ -226,7 +224,7 @@ public class form extends javax.swing.JFrame {
             Mahasiswa mhs=new Mahasiswa(nim.getText());
             
             try {
-                if(mhs.login(con)){
+                if(mhs.terdaftar(con)){
                     formasli form = new formasli(mhs.nama,mhs.nim);
                     form.nama=mhs.nama;
                     jLabel1.setText(mhs.nama);
