@@ -21,15 +21,16 @@ import java.util.TreeMap;
 public class Admin {
     String username; 
     String pass;
+    int loc;
     Scanner sc = new Scanner(System.in);
     
-    TreeMap<String,String> log= new TreeMap<>();
+    TreeMap<String,String> adm= new TreeMap<>();
     
     public Admin(String username, String pass) {
         this.username=username;
         this.pass=pass;
     }
-    
+
     public boolean login (Connection con) throws SQLException{
         Statement stmt = con.createStatement();
         String query="SELECT * FROM admin";
@@ -38,22 +39,35 @@ public class Admin {
 
         String passFromDb="";
         String unameFromDb="";
+        int tempatAdminDb;
 
         //isi hashmap
         while(rs.next()){
             passFromDb=rs.getString("password");
             unameFromDb=rs.getString("username");
-            log.put(unameFromDb, passFromDb);
+            
+            adm.put(unameFromDb, passFromDb);
         }
         
-        if (pass.equals(log.get(username))){
+        
+        if (pass.equals(adm.get(username))){
+            query="SELECT * FROM `admin` WHERE `username` = '"+username+"'";
+            rs = stmt.executeQuery(query);
+            while(rs.next()){
+                tempatAdminDb=rs.getInt("tempat_peminjaman_id");
+                loc=tempatAdminDb;
+                System.out.println(tempatAdminDb);
+            }
             return true;
         }else{
             return false;
         }
     }
     
-    public boolean cek=false;
+//    public int getLoc() {
+//        System.out.println(loc);
+//        return loc;
+//    }
     
     public void menu (Connection con) throws SQLException{
         System.out.println("1. Mendaftarkan admin baru");
@@ -72,15 +86,11 @@ public class Admin {
         }
     }
     
-    public void tambah (Connection con) throws SQLException{
-        System.out.println("\nusername : ");
-        String unameBaru = sc.next();
-        System.out.println("\npassword : ");
-        String passBaru = sc.next();
+    public void tambah(Connection con)throws SQLException{
+        Statement stmt = con.createStatement();
+        String query="INSERT INTO admin(username,password,tempat_peminjaman_id) VALUE ('" +username+ "','" +pass+ "','" +loc+ "')";
         
-        log.put(unameBaru, passBaru);
-        
-        System.out.println("isi log" + log);
+        if(stmt.executeUpdate(query)==1){  
+        }
     }
-    
 }

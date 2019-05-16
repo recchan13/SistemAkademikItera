@@ -9,6 +9,12 @@ package sistemakademikitera;
  *
  * @author GOCCHAN
  */
-class ArrayList<T> {
-    
+public class BarangPinjam {
+    int id;
+    String nama;
+
+    public BarangPinjam(int id, String nama) {
+        this.id=id;
+        this.nama=nama;
+    }
 }

@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 /**
  *
@@ -19,6 +20,7 @@ import java.util.Scanner;
 public class Mahasiswa {
     String nim,nama,prodi;
     private Object con;
+    int inputLoc;
     
     public Mahasiswa(String nim) {
         this.nim=nim;
@@ -52,12 +54,18 @@ public class Mahasiswa {
         }
     }
     
+    
     public void pilihBarangRuang (Connection con) throws SQLException{
+        //sediain login admin
+        
+//        Admin admin=new Admin(nama, nama);
         Scanner sc = new Scanner(System.in);
             String nama="";
-//            int jml = 0;
+            int jml=0;
+            int id=0;
+            //nanti ini di ubah jadi scanner
         
-        Barang barang = new Barang(nama);
+        Barang barang = new Barang(jml, id, nama);
 //        ArrayList<Barang> brng =new ArrayList();
         
         System.out.println("pilih barang : ");
@@ -73,6 +81,40 @@ public class Mahasiswa {
             //manggil kelas ruang atau jadwal
             
             
+        }
+    }
+    
+    public String tempatPinjam (Connection con) throws SQLException {
+        Statement stmt = con.createStatement();
+        String query="SELECT * FROM tempat_peminjaman";
+        ResultSet rs = stmt.executeQuery(query);
+        
+        int lokasiDB;
+        String namaLokasiDB="";
+        String namaGedungDB="";
+
+        //isi hashmap
+        TreeMap<Integer,String> lok= new TreeMap<>();
+        while(rs.next()){
+            lokasiDB=rs.getInt("id");
+            namaLokasiDB=rs.getString("nama");
+            
+            lok.put(lokasiDB, namaLokasiDB);
+        }
+        //outputkan semua id LokasiDB
+        System.out.println(inputLoc);
+        if (lok.get(inputLoc)!=null){
+            //outputkan ke text
+            query="SELECT * FROM `tempat_peminjaman` WHERE `id` = '"+inputLoc+"'";
+            rs = stmt.executeQuery(query);
+            
+            while(rs.next()){
+                namaGedungDB=rs.getString("gedung");
+            }
+//            System.out.println(lok.get(inputLoc)+" gedung "+namaGedungDB);
+            return (lok.get(inputLoc)+" gedung "+namaGedungDB);
+        }else{
+            return "Masukkan ID tempat yang benar";
         }
     }
 }

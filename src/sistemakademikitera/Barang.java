@@ -15,13 +15,12 @@ import java.util.TreeMap;
  *
  * @author GOCCHAN
  */
-public class Barang {
-    String nama;
+public class Barang extends BarangPinjam {
     int jumlahStok;
-    
-    public Barang(String nama) {
-        this.nama=nama;
-//        this.jumlahStok=jumlahStok;
+
+    public Barang(int jumlahStok, int id, String nama) {
+        super(id, nama);
+        this.jumlahStok = jumlahStok;
     }
     
     public void pilihBarang(Connection con,String nama) throws SQLException{
@@ -33,6 +32,7 @@ public class Barang {
         int jumlahFromDb;
         
         TreeMap<String,Integer> brg= new TreeMap<>();
+        
         while(rs.next()){
             namaFromDb=rs.getString("nama");
             jumlahFromDb=rs.getInt("jumlah_stok");

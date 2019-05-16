@@ -20,27 +20,22 @@ public class SistemAkademikItera {
      */
     public static void main(String[] args) throws SQLException {
         KonekDB mKonekDB = new KonekDB();
-        Connection con=mKonekDB.getConnection();
+        Connection con = mKonekDB.getConnection();
         
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
         LogIn log = new LogIn();
         
         log.setVisible(true);
-            //kalo klik mahasiswa mulai dari sini untuk GUI
-        
-//            System.out.println("\nlogin sebagai mahasiswa");
-//
-            String nim = sc.next();
-            Mahasiswa mahasiswa = new Mahasiswa(nim);
-//            
-            mahasiswa.terdaftar(con);
-//            if(mahasiswa.terdaftar(con)){
-//                //alihkan ke form
-//                mahasiswa.pilihBarangRuang(con);
-//            }else{
-//                //isi ulang nim
-//            }
-////        }
+        String nim = sc.next();
+        Mahasiswa mahasiswa = new Mahasiswa(nim);
+
+        mahasiswa.terdaftar(con);
+        if(mahasiswa.terdaftar(con)){
+            //alihkan ke form
+            mahasiswa.pilihBarangRuang(con);
+        }else{
+            //isi ulang nim
+        }
     }
 }
