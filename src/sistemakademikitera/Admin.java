@@ -36,7 +36,6 @@ public class Admin extends Abs {
         String query="SELECT * FROM admin";
         ResultSet rs = stmt.executeQuery(query);
         
-
         String passFromDb="";
         String unameFromDb="";
         int tempatAdminDb;

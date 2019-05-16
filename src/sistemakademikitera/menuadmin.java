@@ -145,6 +145,10 @@ public class menuadmin extends javax.swing.JFrame {
         upjadwal1.setText("Update Jadwal");
         pengbarang1.setText("");
         tamadmin1.setText("");
+        
+        tambahjadwal tambah=new tambahjadwal();
+        tambah.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_gam1MouseClicked
 
     private void gam2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gam2MouseClicked
@@ -162,9 +166,7 @@ public class menuadmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         upjadwal1.setText("");
         pengbarang1.setText("Pengembalian Barang");
-        tamadmin1.setText(""); 
-        
-        
+        tamadmin1.setText("");
     }//GEN-LAST:event_gam3MouseClicked
 
     /**
