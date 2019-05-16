@@ -42,11 +42,11 @@ public class formasli2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/formkedua.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/kecildusk.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 700));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 700));
 
-        jPanel1.setBackground(new java.awt.Color(239, 160, 153));
+        jPanel1.setBackground(new java.awt.Color(255, 168, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
@@ -58,7 +58,7 @@ public class formasli2 extends javax.swing.JFrame {
                 jLabel16jLabel15MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 620, -1, -1));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 620, -1, -1));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/Thanksgiving_Add_-_On-09-512.png"))); // NOI18N
         jLabel15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -67,12 +67,12 @@ public class formasli2 extends javax.swing.JFrame {
                 jLabel15MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, -1, 61));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, -1, 61));
 
-        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Hari yang diinginkan");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         monday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-monday-64.png"))); // NOI18N
         monday.setText("jLabel2");
@@ -82,7 +82,7 @@ public class formasli2 extends javax.swing.JFrame {
                 mondayMouseClicked(evt);
             }
         });
-        jPanel1.add(monday, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 60, -1));
+        jPanel1.add(monday, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 60, -1));
 
         tuesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-tuesday-64.png"))); // NOI18N
         tuesday.setText("jLabel4");
@@ -92,7 +92,7 @@ public class formasli2 extends javax.swing.JFrame {
                 tuesdayMouseClicked(evt);
             }
         });
-        jPanel1.add(tuesday, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 60, -1));
+        jPanel1.add(tuesday, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 60, -1));
 
         wednesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-wednesday-64.png"))); // NOI18N
         wednesday.setText("jLabel5");
@@ -102,7 +102,7 @@ public class formasli2 extends javax.swing.JFrame {
                 wednesdayMouseClicked(evt);
             }
         });
-        jPanel1.add(wednesday, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 60, -1));
+        jPanel1.add(wednesday, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 60, -1));
 
         thursday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-thursday-64.png"))); // NOI18N
         thursday.setText("jLabel6");
@@ -112,7 +112,7 @@ public class formasli2 extends javax.swing.JFrame {
                 thursdayMouseClicked(evt);
             }
         });
-        jPanel1.add(thursday, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 60, -1));
+        jPanel1.add(thursday, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 60, -1));
 
         friday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-friday-64.png"))); // NOI18N
         friday.setText("jLabel7");
@@ -122,9 +122,9 @@ public class formasli2 extends javax.swing.JFrame {
                 fridayMouseClicked(evt);
             }
         });
-        jPanel1.add(friday, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 60, -1));
+        jPanel1.add(friday, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 60, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 260, 680));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 270, 680));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
