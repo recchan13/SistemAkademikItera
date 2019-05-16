@@ -66,6 +66,7 @@ public class LogIn2 extends javax.swing.JFrame {
         Unamee.setBackground(new java.awt.Color(187, 134, 99));
         Unamee.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         Unamee.setForeground(new java.awt.Color(255, 255, 255));
+        Unamee.setBorder(null);
         Unamee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UnameeActionPerformed(evt);
@@ -76,6 +77,7 @@ public class LogIn2 extends javax.swing.JFrame {
         Pass.setBackground(new java.awt.Color(187, 134, 99));
         Pass.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         Pass.setForeground(new java.awt.Color(255, 255, 255));
+        Pass.setBorder(null);
         getContentPane().add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, 30));
 
         jLabel2.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N

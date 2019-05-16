@@ -106,6 +106,7 @@ public class form extends javax.swing.JFrame {
         nim.setBackground(new java.awt.Color(187, 134, 99));
         nim.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         nim.setForeground(new java.awt.Color(255, 255, 255));
+        nim.setBorder(null);
         nim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nimActionPerformed(evt);
@@ -126,12 +127,12 @@ public class form extends javax.swing.JFrame {
         Ket.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         Ket.setForeground(new java.awt.Color(255, 255, 255));
         Ket.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(Ket, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 670, 190, 40));
+        getContentPane().add(Ket, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 180, 40));
 
         Ket1.setFont(new java.awt.Font("Agency FB", 1, 26)); // NOI18N
         Ket1.setForeground(new java.awt.Color(255, 255, 255));
         Ket1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(Ket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 320, 40));
+        getContentPane().add(Ket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 220, 40));
 
         jLabel1.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
