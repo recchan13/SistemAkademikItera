@@ -4,9 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/TubesJava/SistemAkademikItera/src/sistemakademikitera/Admin.java</file>
-            <file>file:/D:/TubesJava/SistemAkademikItera/src/sistemakademikitera/KonekDB.java</file>
+            <file>file:/D:/TubesJava/SistemAkademikItera/src/sistemakademikitera/tambahadmin.java</file>
             <file>file:/D:/TubesJava/SistemAkademikItera/src/sistemakademikitera/Mahasiswa.java</file>
+            <file>file:/D:/TubesJava/SistemAkademikItera/src/sistemakademikitera/Ruang.java</file>
+            <file>file:/D:/TubesJava/SistemAkademikItera/src/sistemakademikitera/formasli1.java</file>
+            <file>file:/D:/TubesJava/SistemAkademikItera/src/sistemakademikitera/form.java</file>
             <file>file:/D:/TubesJava/SistemAkademikItera/src/sistemakademikitera/SistemAkademikItera.java</file>
+            <file>file:/D:/TubesJava/SistemAkademikItera/src/sistemakademikitera/Barang.java</file>
         </group>
     </open-files>
 </project-private>
