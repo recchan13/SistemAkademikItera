@@ -183,7 +183,7 @@ public class form extends javax.swing.JFrame {
         System.out.println("nim "+nim.getText());
         
         try {
-            if(mhs.terdaftar(con)){
+            if(mhs.login(con)){
                 formasli form = new formasli(mhs.nama,mhs.nim);
                 form.setVisible(true);
                 this.dispose();
@@ -209,7 +209,7 @@ public class form extends javax.swing.JFrame {
         System.out.println("nim "+nim.getText());
         
         try {
-            if(mhs.terdaftar(con)){
+            if(mhs.login(con)){
                 formasli form = new formasli(mhs.nama,mhs.nim);
                 form.setVisible(true);
                 this.dispose();
@@ -254,7 +254,7 @@ public class form extends javax.swing.JFrame {
             Mahasiswa mhs=new Mahasiswa(nim.getText());
             
             try {
-                if(mhs.terdaftar(con)){
+                if(mhs.login(con)){
                     formasli form = new formasli(mhs.nama,mhs.nim);
                     form.nama=mhs.nama;
                     jLabel1.setText(mhs.nama);

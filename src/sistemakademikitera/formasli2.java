@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package sistemakademikitera;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -138,6 +139,7 @@ public class formasli2 extends javax.swing.JFrame {
 
     private void mondayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mondayMouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_mondayMouseClicked
 
     private void tuesdayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tuesdayMouseClicked

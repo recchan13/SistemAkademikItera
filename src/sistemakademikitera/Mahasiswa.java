@@ -17,7 +17,7 @@ import java.util.TreeMap;
  *
  * @author GOCCHAN
  */
-public class Mahasiswa {
+public class Mahasiswa extends Abs {
     String nim,nama,prodi;
     private Object con;
     int inputLoc;
@@ -29,7 +29,8 @@ public class Mahasiswa {
     }
     
     //untuk cek apakah mahasiswa tsb terdaftar atau tidak
-    public boolean terdaftar (Connection con) throws SQLException{
+    @Override
+    public boolean login (Connection con) throws SQLException{
         Statement stmt = con.createStatement();
         String query="SELECT * FROM mahasiswa";
         ResultSet rs = stmt.executeQuery(query);

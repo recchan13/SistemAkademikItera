@@ -83,7 +83,7 @@ public class formasli extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("B. Keterangan Pinjaman");
+        jLabel6.setText("Keterangan Pinjaman");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
@@ -187,7 +187,7 @@ public class formasli extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("A. Keterangan Peminjam");
+        jLabel8.setText("Keterangan Peminjam");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 0, 500, 630));
@@ -226,9 +226,11 @@ public class formasli extends javax.swing.JFrame {
         if(kriteria.equals("Ruang") ){
             formasli2 form = new formasli2();
             form.setVisible(true);
+            this.dispose();
         }else{
             formasli1 form = new formasli1();
             form.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_aksidaunMouseClicked
 

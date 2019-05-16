@@ -18,7 +18,7 @@ import java.util.TreeMap;
  *
  * @author GOCCHAN
  */
-public class Admin {
+public class Admin extends Abs {
     String username; 
     String pass;
     int loc;
@@ -30,7 +30,7 @@ public class Admin {
         this.username=username;
         this.pass=pass;
     }
-
+    @Override
     public boolean login (Connection con) throws SQLException{
         Statement stmt = con.createStatement();
         String query="SELECT * FROM admin";
