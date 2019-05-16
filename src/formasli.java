@@ -73,7 +73,7 @@ public class formasli extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("A. Keterangan Peminjam");
+        jLabel3.setText("   Keterangan Peminjam");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
@@ -88,13 +88,13 @@ public class formasli extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("B. Keterangan Pinjaman");
+        jLabel6.setText("   Keterangan Pinjaman");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Kategori Pinjaman");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
 
         lRuang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/room.png"))); // NOI18N
         lRuang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -226,6 +226,7 @@ public class formasli extends javax.swing.JFrame {
         if(kriteria.equals("Ruang") ){
             formasli2 form = new formasli2();
             form.setVisible(true);
+            this.dispose();
         }else{
             formasli1 form = new formasli1();
             form.setVisible(true);
@@ -237,6 +238,7 @@ public class formasli extends javax.swing.JFrame {
          if(kriteria.equals("Ruang") ){
             formasli2 form = new formasli2();
             form.setVisible(true);
+            this.dispose();
         }else{
             formasli1 form = new formasli1();
             form.setVisible(true);
