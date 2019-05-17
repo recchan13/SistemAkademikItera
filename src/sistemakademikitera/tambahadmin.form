@@ -119,6 +119,7 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
+<<<<<<< HEAD
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="380" y="180" width="227" height="-1"/>
@@ -132,14 +133,36 @@
         </Constraint>
       </Constraints>
     </Component>
+=======
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="380" y="180" width="227" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField2">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="380" y="240" width="227" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Agency FB" size="36" style="1"/>
+<<<<<<< HEAD
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
+=======
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
         <Property name="text" type="java.lang.String" value="Menambah Akun Admin"/>
       </Properties>
       <Constraints>
@@ -147,6 +170,7 @@
           <AbsoluteConstraints x="240" y="50" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -305,6 +329,8 @@
       </SubComponents>
     </Container>
 =======
+=======
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -335,6 +361,9 @@
         </Constraint>
       </Constraints>
     </Component>
+<<<<<<< HEAD
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
+=======
 >>>>>>> parent of c3fe62c... Merge branch 'Alya'
   </SubComponents>
 </Form>

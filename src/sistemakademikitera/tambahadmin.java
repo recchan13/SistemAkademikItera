@@ -41,15 +41,21 @@ public class tambahadmin extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         keterangan = new javax.swing.JLabel();
 <<<<<<< HEAD
+<<<<<<< HEAD
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 =======
+=======
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         bcg = new javax.swing.JLabel();
+<<<<<<< HEAD
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
+=======
 >>>>>>> parent of c3fe62c... Merge branch 'Alya'
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,6 +105,7 @@ public class tambahadmin extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         keterangan.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
         keterangan.setForeground(new java.awt.Color(255, 255, 255));
         keterangan.setText("  ");
@@ -117,10 +124,15 @@ public class tambahadmin extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 160, 40));
 =======
+=======
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
         jLabel6.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Masukan Password Admin Baru ");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, 16));
+<<<<<<< HEAD
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
+=======
 >>>>>>> parent of c3fe62c... Merge branch 'Alya'
 
         bcg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/backlit-color-colour-145805.jpg"))); // NOI18N
@@ -131,6 +143,7 @@ public class tambahadmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -139,6 +152,8 @@ public class tambahadmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 =======
+=======
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here
         Admin admin=new Admin(jTextField1.getText(),jTextField2.getText());
@@ -159,6 +174,9 @@ public class tambahadmin extends javax.swing.JFrame {
         mnadmin.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
+<<<<<<< HEAD
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
+=======
 >>>>>>> parent of c3fe62c... Merge branch 'Alya'
     
     /**

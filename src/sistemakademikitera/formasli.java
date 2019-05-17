@@ -20,12 +20,19 @@ public class formasli extends javax.swing.JFrame {
     public String nim;
     public String kriteria;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public int lok;
     public formasli(String nama, String nim, int lok) {
         initComponents();
         this.nama=nama;
         this.nim=nim;
         this.lok=lok;
+=======
+    public formasli(String nama, String nim) {
+        initComponents();
+        this.nama=nama;
+        this.nim=nim;
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
 =======
     public formasli(String nama, String nim) {
         initComponents();

@@ -186,9 +186,14 @@ public class form extends javax.swing.JFrame {
         
         try {
 <<<<<<< HEAD
+<<<<<<< HEAD
             if(mhs.login(con) && !kettem.getText().isEmpty()){
                 formasli form = new formasli(mhs.nama,mhs.nim,this.idTempat);
                 
+=======
+            if(mhs.login(con)){
+                formasli form = new formasli(mhs.nama,mhs.nim);
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
 =======
             if(mhs.login(con)){
                 formasli form = new formasli(mhs.nama,mhs.nim);
@@ -219,8 +224,13 @@ public class form extends javax.swing.JFrame {
         
         try {
 <<<<<<< HEAD
+<<<<<<< HEAD
             if(mhs.login(con)&& !kettem.getText().isEmpty()){
                 formasli form = new formasli(mhs.nama,mhs.nim,this.idTempat);
+=======
+            if(mhs.login(con)){
+                formasli form = new formasli(mhs.nama,mhs.nim);
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
 =======
             if(mhs.login(con)){
                 formasli form = new formasli(mhs.nama,mhs.nim);
@@ -231,7 +241,10 @@ public class form extends javax.swing.JFrame {
                 jLabel1.setText(mhs.nama);
                 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 tem=tempat.getText();
+=======
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
 =======
 >>>>>>> parent of c3fe62c... Merge branch 'Alya'
                 Ket.setText("SELAMAT DATANG");
@@ -273,8 +286,13 @@ public class form extends javax.swing.JFrame {
             
             try {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if(mhs.login(con) ){
                     formasli form = new formasli(mhs.nama,mhs.nim,this.idTempat);
+=======
+                if(mhs.login(con)){
+                    formasli form = new formasli(mhs.nama,mhs.nim);
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
 =======
                 if(mhs.login(con)){
                     formasli form = new formasli(mhs.nama,mhs.nim);

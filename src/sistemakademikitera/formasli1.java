@@ -15,6 +15,7 @@ public class formasli1 extends javax.swing.JFrame {
      * Creates new form formasli1
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     public String idBrg;
     
@@ -46,6 +47,10 @@ public class formasli1 extends javax.swing.JFrame {
         tampil_barang();
         
         lokasi.setText(this.namaLok +" gedung "+this.gedung);
+=======
+    public formasli1() {
+        initComponents();
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
 =======
     public formasli1() {
         initComponents();
@@ -201,6 +206,7 @@ public class formasli1 extends javax.swing.JFrame {
             }
         });
 <<<<<<< HEAD
+<<<<<<< HEAD
         tablebarang.setMinimumSize(new java.awt.Dimension(33, 0));
         tablebarang.setRowHeight(33);
         tablebarang.setRowMargin(10);
@@ -209,11 +215,16 @@ public class formasli1 extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 400, 300));
 =======
+=======
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setHeaderValue("ID Barang");
             jTable1.getColumnModel().getColumn(1).setHeaderValue("Nama Barang");
         }
+<<<<<<< HEAD
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
+=======
 >>>>>>> parent of c3fe62c... Merge branch 'Alya'
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 410, 330));
@@ -239,6 +250,7 @@ public class formasli1 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
 <<<<<<< HEAD
         this.idBrg=idbrang.getText();
         if(!idbrang.getText().isEmpty()){
@@ -288,6 +300,10 @@ public class formasli1 extends javax.swing.JFrame {
          }
      }
    
+=======
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
 =======
     }//GEN-LAST:event_jButton1ActionPerformed
 
