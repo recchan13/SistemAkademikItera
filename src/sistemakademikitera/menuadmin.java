@@ -34,12 +34,9 @@ public class menuadmin extends javax.swing.JFrame {
         gam1 = new javax.swing.JLabel();
         gam2 = new javax.swing.JLabel();
         gam3 = new javax.swing.JLabel();
-        pengbarang1 = new javax.swing.JLabel();
         pengbarang = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        upjadwal1 = new javax.swing.JLabel();
+        tambahadmin1 = new javax.swing.JLabel();
         upjadwal = new javax.swing.JLabel();
-        tamadmin1 = new javax.swing.JLabel();
         tamadmin = new javax.swing.JLabel();
         bcgrnd = new javax.swing.JLabel();
 
@@ -76,12 +73,6 @@ public class menuadmin extends javax.swing.JFrame {
         });
         getContentPane().add(gam3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 150, -1));
 
-        pengbarang1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        pengbarang1.setForeground(new java.awt.Color(204, 0, 0));
-        pengbarang1.setText(" ");
-        pengbarang1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(pengbarang1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 190, -1));
-
         pengbarang.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         pengbarang.setForeground(new java.awt.Color(255, 255, 255));
         pengbarang.setText("Pengembalian Barang");
@@ -93,17 +84,16 @@ public class menuadmin extends javax.swing.JFrame {
         });
         getContentPane().add(pengbarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("SELAMAT DATANG DI MENU ADMIN");
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, -1, -1));
-
-        upjadwal1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        upjadwal1.setForeground(new java.awt.Color(204, 0, 0));
-        upjadwal1.setText(" ");
-        upjadwal1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(upjadwal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 130, -1));
+        tambahadmin1.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
+        tambahadmin1.setForeground(new java.awt.Color(255, 255, 255));
+        tambahadmin1.setText("SELAMAT DATANG DI MENU ADMIN");
+        tambahadmin1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tambahadmin1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tambahadminMouseClicked(evt);
+            }
+        });
+        getContentPane().add(tambahadmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, -1, -1));
 
         upjadwal.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         upjadwal.setForeground(new java.awt.Color(255, 255, 255));
@@ -115,12 +105,6 @@ public class menuadmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(upjadwal, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
-
-        tamadmin1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        tamadmin1.setForeground(new java.awt.Color(204, 0, 0));
-        tamadmin1.setText(" ");
-        tamadmin1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(tamadmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 130, -1));
 
         tamadmin.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         tamadmin.setForeground(new java.awt.Color(255, 255, 255));
@@ -142,21 +126,18 @@ public class menuadmin extends javax.swing.JFrame {
 
     private void gam1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gam1MouseClicked
         // TODO add your handling code here:
-        upjadwal1.setText("Update Jadwal");
-        pengbarang1.setText("");
-        tamadmin1.setText("");
-        
-        tambahjadwal tambah=new tambahjadwal();
-        tambah.setVisible(true);
-        this.dispose();
+        upjadwal.setForeground(new java.awt.Color(176,78,31));
+        pengbarang.setForeground(new java.awt.Color(255, 255, 255));
+        tamadmin.setForeground(new java.awt.Color(255, 255, 255));
+
     }//GEN-LAST:event_gam1MouseClicked
 
     private void gam2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gam2MouseClicked
         // TODO add your handling code here:
-        upjadwal1.setText("");
-        pengbarang1.setText("");
-        tamadmin1.setText("Tambah Admin");
-        
+        upjadwal.setForeground(new java.awt.Color(255, 255, 255));
+        pengbarang.setForeground(new java.awt.Color(255, 255, 255));
+        tamadmin.setForeground(new java.awt.Color(176,78,31));
+
         tambahadmin tambah=new tambahadmin();
         tambah.setVisible(true);
         this.dispose();
@@ -164,9 +145,9 @@ public class menuadmin extends javax.swing.JFrame {
 
     private void gam3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gam3MouseClicked
         // TODO add your handling code here:
-        upjadwal1.setText("");
-        pengbarang1.setText("Pengembalian Barang");
-        tamadmin1.setText("");
+        upjadwal.setForeground(new java.awt.Color(255, 255, 255));
+        pengbarang.setForeground(new java.awt.Color(176,78,31));
+        tamadmin.setForeground(new java.awt.Color(255, 255, 255));
     }//GEN-LAST:event_gam3MouseClicked
 
     /**
@@ -176,7 +157,7 @@ public class menuadmin extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -209,12 +190,9 @@ public class menuadmin extends javax.swing.JFrame {
     private javax.swing.JLabel gam1;
     private javax.swing.JLabel gam2;
     private javax.swing.JLabel gam3;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel pengbarang;
-    private javax.swing.JLabel pengbarang1;
     private javax.swing.JLabel tamadmin;
-    private javax.swing.JLabel tamadmin1;
+    private javax.swing.JLabel tambahadmin1;
     private javax.swing.JLabel upjadwal;
-    private javax.swing.JLabel upjadwal1;
     // End of variables declaration//GEN-END:variables
 }

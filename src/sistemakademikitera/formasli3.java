@@ -5,6 +5,17 @@
  */
 package sistemakademikitera;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Alle
@@ -14,7 +25,18 @@ public class formasli3 extends javax.swing.JFrame {
     /**
      * Creates new form formasli3
      */
-    public formasli3() {
+    
+    public String hari;
+    public String jam;
+    public String ruang;
+    Connection conn=null;
+    public formasli3(String hari) {
+        this.hari=hari;
+        
+        initComponents();
+        tampil_jadwal();
+        
+        kethari.setText(this.hari );
         initComponents();
     }
 
@@ -30,7 +52,16 @@ public class formasli3 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        ketjam = new javax.swing.JTextField();
+        ketruangan = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablejadwal = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        kethari = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        submit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -44,19 +75,149 @@ public class formasli3 extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 0, 370, 630));
 
-        jPanel1.setBackground(new java.awt.Color(255, 168, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 193, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
+        ketjam.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 20)); // NOI18N
+        ketjam.setForeground(new java.awt.Color(163, 107, 0));
+        ketjam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ketjamActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ketjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, 130, 30));
+
+        ketruangan.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 20)); // NOI18N
+        ketruangan.setForeground(new java.awt.Color(163, 107, 0));
+        ketruangan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ketruanganActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ketruangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, 110, 30));
+
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 26)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Pilihan Waktu dan Ruangan");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
+
+        tablejadwal.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 18)); // NOI18N
+        tablejadwal.setForeground(new java.awt.Color(163, 107, 0));
+        tablejadwal.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Jam", "Ruangan"
+            }
+        ));
+        tablejadwal.setRowHeight(33);
+        tablejadwal.setRowMargin(10);
+        jScrollPane1.setViewportView(tablejadwal);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 360));
+
+        jLabel4.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 20)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Hari");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 20)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Jam");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+
+        kethari.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 20)); // NOI18N
+        kethari.setForeground(new java.awt.Color(255, 255, 255));
+        kethari.setText(" ");
+        jPanel1.add(kethari, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 130, -1));
+
+        jLabel7.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 20)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Ruangan");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, -1, -1));
+
+        submit.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
+        submit.setForeground(new java.awt.Color(255, 255, 255));
+        submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/Thanksgiving_Add_-_On-09-512.png"))); // NOI18N
+        submit.setText("SUBMIT");
+        submit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        submit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                submitMouseClicked(evt);
+            }
+        });
+        jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 560, 160, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 500, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void submitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitMouseClicked
+        // TODO add your handling code here:
+        this.jam = ketjam.getText();
+        this.ruang = ketruangan.getText();
+        
+        System.out.println("hehe"+this.jam+ this.ruang);
+        
+        if(!ketjam.getText().isEmpty() && !ketruangan.getText().isEmpty()){
+            listjadwal jadwal = new listjadwal (ketjam.getText(),ketjam.getText());
+            try {
+                jadwal.Pinjam(conn);
+                
+                kesimpulan simpulan=new kesimpulan();
+                simpulan.setVisible(true);
+                this.dispose();
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(formasli1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_submitMouseClicked
+
+    private void ketjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ketjamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ketjamActionPerformed
+
+    private void ketruanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ketruanganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ketruanganActionPerformed
+     public ArrayList<listjadwal> jadwal(){
+         ArrayList<listjadwal> jadwal1=new ArrayList();
+         //form formw = new form();                 
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conc=(Connection) DriverManager.getConnection("jdbc:mysql://"+"localhost:3306/sistem_peminjaman", "root","");
+            String query="SELECT jam, ruangan FROM jadwal WHERE hari = '"+hari+"' and ketersediaan = 0";
+            Statement sts = conc.createStatement();
+            ResultSet rss = sts.executeQuery(query);
+            listjadwal lbars;
+            
+            while (rss.next()){
+                lbars = new listjadwal (rss.getString("Jam"),rss.getString("Ruangan"));
+                jadwal1.add(lbars);
+            }
+            
+        }catch(ClassNotFoundException | SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        return jadwal1;
+    }
+     
+     public void tampil_jadwal(){
+         ArrayList<listjadwal> list =  jadwal();
+         DefaultTableModel model = (DefaultTableModel)tablejadwal.getModel();
+         Object[] baris = new Object [2];
+         for (int i=0;i<list.size(); i++){
+             baris[0]=list.get(i).getjam();
+             baris[1]=list.get(i).getruang();
+             model.addRow(baris);
+         }
+     }
+   
     /**
      * @param args the command line arguments
      */
@@ -87,7 +248,7 @@ public class formasli3 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new formasli3().setVisible(true);
+               // new formasli3().setVisible(true);
             }
         });
     }
@@ -96,6 +257,15 @@ public class formasli3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel kethari;
+    private javax.swing.JTextField ketjam;
+    private javax.swing.JTextField ketruangan;
+    private javax.swing.JLabel submit;
+    private javax.swing.JTable tablejadwal;
     // End of variables declaration//GEN-END:variables
 }
