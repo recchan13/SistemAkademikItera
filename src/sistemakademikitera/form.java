@@ -50,7 +50,7 @@ public class form extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Ket = new javax.swing.JLabel();
         Ket1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        kettem = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
@@ -116,9 +116,10 @@ public class form extends javax.swing.JFrame {
         uname1.setText("Name");
         getContentPane().add(uname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
 
-        tempat.setBackground(new java.awt.Color(220, 198, 139));
+        tempat.setBackground(new java.awt.Color(164, 119, 84));
         tempat.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         tempat.setForeground(new java.awt.Color(255, 255, 255));
+        tempat.setBorder(null);
         tempat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tempatActionPerformed(evt);
@@ -131,9 +132,10 @@ public class form extends javax.swing.JFrame {
         });
         getContentPane().add(tempat, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 130, 30));
 
-        nim.setBackground(new java.awt.Color(220, 198, 139));
+        nim.setBackground(new java.awt.Color(164, 119, 84));
         nim.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         nim.setForeground(new java.awt.Color(255, 255, 255));
+        nim.setBorder(null);
         nim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nimActionPerformed(evt);
@@ -149,21 +151,21 @@ public class form extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Log In Mahasiswa");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
 
         Ket.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         Ket.setForeground(new java.awt.Color(255, 255, 255));
         Ket.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(Ket, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 670, 190, 40));
+        getContentPane().add(Ket, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 670, 180, 40));
 
         Ket1.setFont(new java.awt.Font("Agency FB", 1, 26)); // NOI18N
         Ket1.setForeground(new java.awt.Color(255, 255, 255));
         Ket1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(Ket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 320, 40));
+        getContentPane().add(Ket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 670, 200, 40));
 
-        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 220, 40));
+        kettem.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
+        kettem.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(kettem, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 220, 40));
 
         jLabel1.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -176,15 +178,15 @@ public class form extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+public String tem;
     private void daun1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daun1MouseClicked
         // TODO add your handling code here:
         Mahasiswa mhs=new Mahasiswa(nim.getText());
         System.out.println("nim "+nim.getText());
         
         try {
-            if(mhs.login(con)){
-                formasli form = new formasli(mhs.nama,mhs.nim);
+            if(mhs.login(con) && !kettem.getText().isEmpty()){
+                formasli form = new formasli(mhs.nama,mhs.nim,tempat.getText());
                 form.setVisible(true);
                 this.dispose();
                 form.nama=mhs.nama;
@@ -192,6 +194,7 @@ public class form extends javax.swing.JFrame {
                 
                 Ket.setText("SELAMAT DATANG");
                 Ket1.setText("");
+                tem=tempat.getText();
             }else{
                 nim.setText("");
                 Ket.setText("");
@@ -209,13 +212,14 @@ public class form extends javax.swing.JFrame {
         System.out.println("nim "+nim.getText());
         
         try {
-            if(mhs.login(con)){
-                formasli form = new formasli(mhs.nama,mhs.nim);
+            if(mhs.login(con)&& !kettem.getText().isEmpty()){
+                formasli form = new formasli(mhs.nama,mhs.nim, tempat.getText());
                 form.setVisible(true);
                 this.dispose();
                 form.nama=mhs.nama;
                 jLabel1.setText(mhs.nama);
                 
+                 tem=tempat.getText();
                 Ket.setText("SELAMAT DATANG");
                 Ket1.setText("");
             }else{
@@ -254,8 +258,8 @@ public class form extends javax.swing.JFrame {
             Mahasiswa mhs=new Mahasiswa(nim.getText());
             
             try {
-                if(mhs.login(con)){
-                    formasli form = new formasli(mhs.nama,mhs.nim);
+                if(mhs.login(con) ){
+                    formasli form = new formasli(mhs.nama,mhs.nim,tempat.getText());
                     form.nama=mhs.nama;
                     jLabel1.setText(mhs.nama);
                             
@@ -272,7 +276,7 @@ public class form extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_nimKeyPressed
-
+    
     private void tempatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempatActionPerformed
         // TODO add your handling code here:
         
@@ -280,13 +284,14 @@ public class form extends javax.swing.JFrame {
 
     private void tempatKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tempatKeyPressed
         // TODO add your handling code here:
+       
         if(evt.getKeyCode()==10){
             Mahasiswa mhs=new Mahasiswa(nim.getText());
-            
+           
             try {
                 mhs.inputLoc=Integer.parseInt(tempat.getText());
 //                System.out.println(mhs.inputLoc);
-                jLabel3.setText(mhs.tempatPinjam(con));
+                kettem.setText(mhs.tempatPinjam(con));
             } catch (SQLException ex) {
                 Logger.getLogger(form.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -338,7 +343,7 @@ public class form extends javax.swing.JFrame {
     private javax.swing.JLabel daun21;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel kettem;
     private javax.swing.JTextField nim;
     private javax.swing.JTextField tempat;
     private javax.swing.JLabel uname;
