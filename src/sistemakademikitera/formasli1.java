@@ -24,25 +24,37 @@ public class formasli1 extends javax.swing.JFrame {
     /**
      * Creates new form formasli1
      */
-    public String lok;
-    public String nama;
+    
+    public String idBrg;
+    
+    public int lok;
+    String namaLok;
+    String gedung;
+            
     Connection conn=null;
-    public formasli1(String lok) {
-
-        this.lok=lok;
+    public formasli1(int lok) {
+        conn = new KonekDB().getConnection();
+        
+        String query="SELECT * FROM tempat_peminjaman WHERE id = "+lok;
+        Statement stmt;
+        try {
+            stmt = conn.createStatement();
+            
+            ResultSet rs = stmt.executeQuery(query);
+        
+        while(rs.next()){
+            this.lok=rs.getInt("id");
+            this.namaLok=rs.getString("nama");
+            this.gedung=rs.getString("gedung");
+        }
+        } catch (SQLException ex) {
+            Logger.getLogger(formasli1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         initComponents();
         tampil_barang();
-        if (lok.equals("1")){
-            lokasi.setText("C Akademik");
-        } else if (lok.equals("2")){
-            lokasi.setText("E Akademik");
-        }else if (lok.equals("3")){
-            lokasi.setText("D Sarana Prasarana");
-        }else if (lok.equals("4")){
-            lokasi.setText("E Sarana Prasarana");
-        }
-        //lokasi.setText(this.lok);
-       conn = new KonekDB().getConnection();
+        
+        lokasi.setText(this.namaLok +" gedung "+this.gedung);
     }
 
     /**
@@ -120,7 +132,7 @@ public class formasli1 extends javax.swing.JFrame {
         tablebarang.setSelectionBackground(new java.awt.Color(255, 221, 158));
         jScrollPane1.setViewportView(tablebarang);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 280, 300));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 400, 300));
 
         idbrang.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         idbrang.setForeground(new java.awt.Color(163, 107, 0));
@@ -150,9 +162,9 @@ public class formasli1 extends javax.swing.JFrame {
 
     private void submitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitMouseClicked
         // TODO add your handling code here:
-        this.nama=idbrang.getText();
+        this.idBrg=idbrang.getText();
         if(!idbrang.getText().isEmpty()){
-            listbarang barang = new listbarang (lok,nama);
+            listbarang barang = new listbarang (this.lok,this.idBrg);
             try {
                 if(barang.Pinjam(conn)){
                    kesimpulan kesimpulanw= new kesimpulan();
@@ -177,7 +189,7 @@ public class formasli1 extends javax.swing.JFrame {
             ResultSet rs = st.executeQuery(query);
             listbarang lbar;
             while (rs.next()){
-                lbar=new listbarang(rs.getString("Id"), rs.getString("Nama"));
+                lbar=new listbarang(Integer.parseInt(rs.getString("Id")), rs.getString("Nama"));
                 barang1.add(lbar);
             }
         }catch(ClassNotFoundException | SQLException e){

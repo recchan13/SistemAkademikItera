@@ -21,6 +21,8 @@ import javax.swing.JOptionPane;
 public class form extends javax.swing.JFrame {
     Connection con=null;
     
+    int idTempat;
+    String tempatGet;
     /**
      * Creates new form form
      */
@@ -181,12 +183,13 @@ public class form extends javax.swing.JFrame {
 public String tem;
     private void daun1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daun1MouseClicked
         // TODO add your handling code here:
+        this.idTempat=Integer.parseInt(tempat.getText());
         Mahasiswa mhs=new Mahasiswa(nim.getText());
-        System.out.println("nim "+nim.getText());
         
         try {
             if(mhs.login(con) && !kettem.getText().isEmpty()){
-                formasli form = new formasli(mhs.nama,mhs.nim,tempat.getText());
+                formasli form = new formasli(mhs.nama,mhs.nim,this.idTempat);
+                
                 form.setVisible(true);
                 this.dispose();
                 form.nama=mhs.nama;
@@ -199,7 +202,7 @@ public String tem;
                 nim.setText("");
                 Ket.setText("");
                 Ket1.setText("LOG IN GAGAL");
-                JOptionPane.showMessageDialog(null, "Maaf anda tidak terdaftar di Itera");
+//                JOptionPane.showMessageDialog(null, "Maaf anda tidak terdaftar di Itera");
             }
         } catch (SQLException ex) {
             Logger.getLogger(form.class.getName()).log(Level.SEVERE, null, ex);
@@ -208,18 +211,19 @@ public String tem;
 
     private void daun12DAUNKANANMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daun12DAUNKANANMouseClicked
         // TODO add your handling code here:
+        this.idTempat=Integer.parseInt(tempat.getText());
         Mahasiswa mhs=new Mahasiswa(nim.getText());
         System.out.println("nim "+nim.getText());
         
         try {
             if(mhs.login(con)&& !kettem.getText().isEmpty()){
-                formasli form = new formasli(mhs.nama,mhs.nim, tempat.getText());
+                formasli form = new formasli(mhs.nama,mhs.nim,this.idTempat);
                 form.setVisible(true);
                 this.dispose();
                 form.nama=mhs.nama;
                 jLabel1.setText(mhs.nama);
                 
-                 tem=tempat.getText();
+                tem=tempat.getText();
                 Ket.setText("SELAMAT DATANG");
                 Ket1.setText("");
             }else{
@@ -259,7 +263,7 @@ public String tem;
             
             try {
                 if(mhs.login(con) ){
-                    formasli form = new formasli(mhs.nama,mhs.nim,tempat.getText());
+                    formasli form = new formasli(mhs.nama,mhs.nim,this.idTempat);
                     form.nama=mhs.nama;
                     jLabel1.setText(mhs.nama);
                             

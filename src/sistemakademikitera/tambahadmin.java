@@ -46,6 +46,8 @@ public class tambahadmin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         keterangan = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -94,7 +96,20 @@ public class tambahadmin extends javax.swing.JFrame {
         keterangan.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
         keterangan.setForeground(new java.awt.Color(255, 255, 255));
         keterangan.setText("  ");
-        jPanel1.add(keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 210, 40));
+        jPanel1.add(keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 340, 40));
+
+        jButton1.setBackground(new java.awt.Color(102, 153, 0));
+        jButton1.setText("SELESAI");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 510, 160, 40));
+
+        jButton2.setBackground(new java.awt.Color(102, 153, 0));
+        jButton2.setText("OK");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 160, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 520, 630));
 
@@ -104,6 +119,10 @@ public class tambahadmin extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -142,6 +161,8 @@ public class tambahadmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bcg;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
