@@ -19,12 +19,19 @@ public class formasli extends javax.swing.JFrame {
     public String nama;
     public String nim;
     public String kriteria;
+<<<<<<< HEAD
     public int lok;
     public formasli(String nama, String nim, int lok) {
         initComponents();
         this.nama=nama;
         this.nim=nim;
         this.lok=lok;
+=======
+    public formasli(String nama, String nim) {
+        initComponents();
+        this.nama=nama;
+        this.nim=nim;
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
         
         namaa.setText(nama);
         nimm.setText(nim);
@@ -67,23 +74,23 @@ public class formasli extends javax.swing.JFrame {
         jLabel2.setText("FORM PEMINJAMAN");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/dusk-evening-flowers-7314 (2).jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/formkedua.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 0, 370, 630));
 
-        jPanel1.setBackground(new java.awt.Color(255, 168, 0));
+        jPanel1.setBackground(new java.awt.Color(239, 160, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nama");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("NIM      ");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Keterangan Pinjaman");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
@@ -133,7 +140,7 @@ public class formasli extends javax.swing.JFrame {
         jPanel1.add(ruang, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, -1, 30));
 
         barang2.setFont(new java.awt.Font("Agency FB", 1, 21)); // NOI18N
-        barang2.setForeground(new java.awt.Color(204, 0, 0));
+        barang2.setForeground(new java.awt.Color(255, 0, 0));
         barang2.setText(" ");
         barang2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         barang2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -174,11 +181,11 @@ public class formasli extends javax.swing.JFrame {
         });
         jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 580, -1, -1));
 
-        namaa.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        namaa.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
         namaa.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(namaa, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 106, 230, 30));
 
-        nimm.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        nimm.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
         nimm.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(nimm, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 230, 30));
 
@@ -187,7 +194,7 @@ public class formasli extends javax.swing.JFrame {
         merah.setText("   ");
         jPanel1.add(merah, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 60, 30));
 
-        jLabel8.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Keterangan Peminjam");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
@@ -230,7 +237,7 @@ public class formasli extends javax.swing.JFrame {
             form.setVisible(true);
             this.dispose();
         }else{
-            formasli1 form = new formasli1(lok);
+            formasli1 form = new formasli1();
             form.setVisible(true);
             this.dispose();
         }
@@ -243,7 +250,7 @@ public class formasli extends javax.swing.JFrame {
             form.setVisible(true);
             this.dispose();
         }else{
-            formasli1 form = new formasli1(lok);
+            formasli1 form = new formasli1();
             form.setVisible(true);
             this.dispose();
         }

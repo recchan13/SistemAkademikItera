@@ -1,20 +1,10 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templa
-tes
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package sistemakademikitera;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Alle
@@ -24,6 +14,7 @@ public class formasli1 extends javax.swing.JFrame {
     /**
      * Creates new form formasli1
      */
+<<<<<<< HEAD
     
     public String idBrg;
     
@@ -55,6 +46,10 @@ public class formasli1 extends javax.swing.JFrame {
         tampil_barang();
         
         lokasi.setText(this.namaLok +" gedung "+this.gedung);
+=======
+    public formasli1() {
+        initComponents();
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
     }
 
     /**
@@ -66,66 +61,146 @@ public class formasli1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        lokasi = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablebarang = new javax.swing.JTable();
-        idbrang = new javax.swing.JTextField();
+        jTable1 = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        submit = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("FORM PEMINJAMAN");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/dusk-evening-flowers-7314 (2).jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/formkedua.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 0, 370, 630));
 
-        jPanel1.setBackground(new java.awt.Color(255, 168, 0));
+        jPanel1.setBackground(new java.awt.Color(239, 160, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lokasi.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        lokasi.setForeground(new java.awt.Color(163, 107, 0));
-        lokasi.setText(" ");
-        jPanel1.add(lokasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, 270, 30));
-
-        jLabel5.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Lokasi");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("ID Barang");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, -1));
 
-        tablebarang.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        tablebarang.setForeground(new java.awt.Color(163, 107, 0));
-        tablebarang.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
                 "ID Barang", "Nama Barang"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
+<<<<<<< HEAD
         tablebarang.setMinimumSize(new java.awt.Dimension(33, 0));
         tablebarang.setRowHeight(33);
         tablebarang.setRowMargin(10);
@@ -133,35 +208,38 @@ public class formasli1 extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tablebarang);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 400, 300));
+=======
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setHeaderValue("ID Barang");
+            jTable1.getColumnModel().getColumn(1).setHeaderValue("Nama Barang");
+        }
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
 
-        idbrang.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        idbrang.setForeground(new java.awt.Color(163, 107, 0));
-        jPanel1.add(idbrang, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 280, 30));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 410, 330));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 410, -1));
 
-        jLabel4.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("List Barang");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
 
-        submit.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
-        submit.setForeground(new java.awt.Color(255, 255, 255));
-        submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/Thanksgiving_Add_-_On-09-512.png"))); // NOI18N
-        submit.setText("SUBMIT");
-        submit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        submit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                submitMouseClicked(evt);
+        jButton1.setText("Selesai");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 560, 160, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 560, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 500, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitMouseClicked
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         this.idBrg=idbrang.getText();
         if(!idbrang.getText().isEmpty()){
             listbarang barang = new listbarang (this.lok,this.idBrg);
@@ -210,6 +288,10 @@ public class formasli1 extends javax.swing.JFrame {
          }
      }
    
+=======
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+>>>>>>> parent of c3fe62c... Merge branch 'Alya'
     /**
      * @param args the command line arguments
      */
@@ -240,24 +322,19 @@ public class formasli1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-        //        new formasli1().setVisible(true);
+                new formasli1().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField idbrang;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lokasi;
-    private javax.swing.JLabel submit;
-    private javax.swing.JTable tablebarang;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-
-   
 }

@@ -63,10 +63,9 @@ public class LogIn2 extends javax.swing.JFrame {
         Keterangan.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(Keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 330, 40));
 
-        Unamee.setBackground(new java.awt.Color(164, 119, 84));
+        Unamee.setBackground(new java.awt.Color(220, 198, 139));
         Unamee.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         Unamee.setForeground(new java.awt.Color(255, 255, 255));
-        Unamee.setBorder(null);
         Unamee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UnameeActionPerformed(evt);
@@ -74,10 +73,9 @@ public class LogIn2 extends javax.swing.JFrame {
         });
         getContentPane().add(Unamee, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 230, 30));
 
-        Pass.setBackground(new java.awt.Color(164, 119, 84));
+        Pass.setBackground(new java.awt.Color(220, 198, 140));
         Pass.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         Pass.setForeground(new java.awt.Color(255, 255, 255));
-        Pass.setBorder(null);
         getContentPane().add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, 30));
 
         jLabel2.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
