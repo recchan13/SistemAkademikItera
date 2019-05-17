@@ -29,6 +29,11 @@ public class formasli extends javax.swing.JFrame {
         namaa.setText(nama);
         nimm.setText(nim);
     }
+    
+    public formasli(){
+        initComponents();
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -230,7 +235,7 @@ public class formasli extends javax.swing.JFrame {
             form.setVisible(true);
             this.dispose();
         }else{
-            formasli1 form = new formasli1(lok);
+            formasli1 form = new formasli1(lok,this.nama,this.nim);
             form.setVisible(true);
             this.dispose();
         }
@@ -243,7 +248,7 @@ public class formasli extends javax.swing.JFrame {
             form.setVisible(true);
             this.dispose();
         }else{
-            formasli1 form = new formasli1(lok);
+            formasli1 form = new formasli1(lok,this.nama,this.nim);
             form.setVisible(true);
             this.dispose();
         }

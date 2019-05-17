@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Alle
  */
 public class formasli1 extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form formasli1
      */
@@ -30,9 +30,12 @@ public class formasli1 extends javax.swing.JFrame {
     public int lok;
     String namaLok;
     String gedung;
+    
+    public String nama;
+    public String nim;
             
     Connection conn=null;
-    public formasli1(int lok) {
+    public formasli1(int lok,String nama,String nim) {
         conn = new KonekDB().getConnection();
         
         String query="SELECT * FROM tempat_peminjaman WHERE id = "+lok;
@@ -55,6 +58,9 @@ public class formasli1 extends javax.swing.JFrame {
         tampil_barang();
         
         lokasi.setText(this.namaLok +" gedung "+this.gedung);
+        
+        this.nim=nim;
+        this.nama=nama;
     }
 
     /**
@@ -163,17 +169,37 @@ public class formasli1 extends javax.swing.JFrame {
     private void submitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitMouseClicked
         // TODO add your handling code here:
         this.idBrg=idbrang.getText();
+        String namaBrg = null;
+        
+        Statement stmt;
+        try {
+            stmt = conn.createStatement();
+            String query="SELECT * FROM `barang` WHERE `id`="+this.idBrg;
+            ResultSet rs = stmt.executeQuery(query);
+        
+            while(rs.next()){
+                namaBrg=rs.getString("nama");
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(formasli1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         if(!idbrang.getText().isEmpty()){
             listbarang barang = new listbarang (this.lok,this.idBrg);
             try {
                 barang.Pinjam(conn);
                 
-                kesimpulan simpulan=new kesimpulan();
+                kesimpulan simpulan=new kesimpulan(idBrg,namaBrg,nama,nim);
+                
+                System.out.println("masuk kesimpulan "+idBrg+namaBrg+nama+nim);
+                
                 simpulan.setVisible(true);
                 this.dispose();
-                
+                System.out.println("masuk sini");
             } catch (SQLException ex) {
                 Logger.getLogger(formasli1.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("masuk catch");
             }
         }
         

@@ -23,6 +23,7 @@ public class form extends javax.swing.JFrame {
     
     int idTempat;
     String tempatGet;
+    
     /**
      * Creates new form form
      */

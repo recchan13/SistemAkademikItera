@@ -5,17 +5,39 @@
  */
 package sistemakademikitera;
 
+import java.awt.HeadlessException;
+
 /**
  *
  * @author Alle
  */
 public class kesimpulan extends javax.swing.JFrame {
-
+    String nim;
+    String namaPeminjam;
+    
+    String idBarang;
+    String namaBarang;
     /**
      * Creates new form kesimpulan
      */
-    public kesimpulan() {
+    
+    
+    kesimpulan(String idBrg, String namaBrg, String nama, String nim) {
         initComponents();
+        
+        this.idBarang=idBrg;
+        this.namaBarang=namaBrg;
+        this.nim=nim;
+        this.namaPeminjam=nama;
+        
+       namaPeminjamField.setText(namaPeminjam);
+       namaBarangField.setText(namaBarang);
+       
+        System.out.println(this.idBarang + " " + this.namaBarang+ " " + this.nim+ " " + this.namaPeminjam);
+    }
+
+    public kesimpulan() throws HeadlessException {
+        
     }
 
     /**
@@ -33,8 +55,8 @@ public class kesimpulan extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        namaPeminjamField = new javax.swing.JLabel();
+        namaBarangField = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,9 +75,9 @@ public class kesimpulan extends javax.swing.JFrame {
 
         jButton2.setText("TIDAK");
 
-        jLabel4.setText("jLabel4");
+        namaPeminjamField.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel5.setText("jLabel4");
+        namaBarangField.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -72,8 +94,8 @@ public class kesimpulan extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addGap(104, 104, 104)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(namaPeminjamField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(namaBarangField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(72, 72, 72))
         );
         jPanel1Layout.setVerticalGroup(
@@ -81,19 +103,19 @@ public class kesimpulan extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(namaPeminjamField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addGap(16, 16, 16)
+                .addComponent(namaBarangField, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,8 +173,8 @@ public class kesimpulan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel namaBarangField;
+    private javax.swing.JLabel namaPeminjamField;
     // End of variables declaration//GEN-END:variables
 }
