@@ -136,6 +136,11 @@ public class formasli1 extends javax.swing.JFrame {
 
         idbrang.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 20)); // NOI18N
         idbrang.setForeground(new java.awt.Color(163, 107, 0));
+        idbrang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idbrangActionPerformed(evt);
+            }
+        });
         jPanel1.add(idbrang, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 280, 30));
 
         jLabel4.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 26)); // NOI18N
@@ -178,9 +183,13 @@ public class formasli1 extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_submitMouseClicked
+
+    private void idbrangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idbrangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idbrangActionPerformed
      public ArrayList<listbarang> barang(){
          ArrayList<listbarang> barang1=new ArrayList();
-         form formw = new form();                 
+         //form formw = new form();                 
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
