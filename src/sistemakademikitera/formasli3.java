@@ -44,13 +44,13 @@ public class formasli3 extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 0, 370, 630));
 
-        jPanel1.setBackground(new java.awt.Color(255, 168, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 193, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 26)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Pilihan Waktu dan Ruangan");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 500, 630));
 

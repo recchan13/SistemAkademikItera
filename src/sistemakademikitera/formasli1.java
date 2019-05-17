@@ -78,25 +78,25 @@ public class formasli1 extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 0, 370, 630));
 
-        jPanel1.setBackground(new java.awt.Color(255, 168, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 193, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lokasi.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        lokasi.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 20)); // NOI18N
         lokasi.setForeground(new java.awt.Color(163, 107, 0));
         lokasi.setText(" ");
         jPanel1.add(lokasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, 270, 30));
 
-        jLabel5.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Lokasi");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("ID Barang");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
 
-        tablebarang.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        tablebarang.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 18)); // NOI18N
         tablebarang.setForeground(new java.awt.Color(163, 107, 0));
         tablebarang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -122,11 +122,11 @@ public class formasli1 extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 280, 300));
 
-        idbrang.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        idbrang.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 20)); // NOI18N
         idbrang.setForeground(new java.awt.Color(163, 107, 0));
         jPanel1.add(idbrang, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 280, 30));
 
-        jLabel4.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 26)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("List Barang");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, -1, -1));

@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package sistemakademikitera;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import static javax.swing.UIManager.get;
+import static javax.swing.UIManager.get;
 
 /**
  *
@@ -44,9 +47,9 @@ public class formasli2 extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/kecildusk.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 700));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 680));
 
-        jPanel1.setBackground(new java.awt.Color(255, 168, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 193, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
@@ -69,11 +72,13 @@ public class formasli2 extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, -1, 61));
 
-        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 26)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Hari yang diinginkan");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
+        monday.setBackground(new java.awt.Color(255, 255, 255));
         monday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-monday-64.png"))); // NOI18N
         monday.setText("jLabel2");
         monday.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -136,26 +141,52 @@ public class formasli2 extends javax.swing.JFrame {
     private void jLabel16jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16jLabel15MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel16jLabel15MouseClicked
-
+    
     private void mondayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mondayMouseClicked
         // TODO add your handling code here:
-        
+        monday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-monday-64 - Copy.png")));
+        tuesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-tuesday-64.png")));
+        wednesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-wednesday-64.png")));
+        thursday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-thursday-64.png")));
+        friday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-friday-64.png")));
+
     }//GEN-LAST:event_mondayMouseClicked
 
     private void tuesdayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tuesdayMouseClicked
         // TODO add your handling code here:
+        monday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-monday-64.png")));
+        tuesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-tuesday-64 - Copy.png")));
+        wednesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-wednesday-64.png")));
+        thursday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-thursday-64.png")));
+        friday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-friday-64.png")));
+
     }//GEN-LAST:event_tuesdayMouseClicked
 
     private void wednesdayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wednesdayMouseClicked
         // TODO add your handling code here:
+        monday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-monday-64.png")));
+        tuesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-tuesday-64.png")));
+        wednesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-wednesday-64 - Copy.png")));
+        thursday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-thursday-64.png")));
+        friday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-friday-64.png")));
     }//GEN-LAST:event_wednesdayMouseClicked
 
     private void thursdayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_thursdayMouseClicked
         // TODO add your handling code here:
+        monday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-monday-64.png")));
+        tuesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-tuesday-64.png")));
+        wednesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-wednesday-64.png")));
+        thursday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-thursday-64 - Copy.png")));
+        friday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-friday-64.png")));
     }//GEN-LAST:event_thursdayMouseClicked
 
     private void fridayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fridayMouseClicked
         // TODO add your handling code here:
+        monday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-monday-64.png")));
+        tuesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-tuesday-64.png")));
+        wednesday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-wednesday-64.png")));
+        thursday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-thursday-64.png")));
+        friday.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/icons8-friday-64 - Copy.png")));
     }//GEN-LAST:event_fridayMouseClicked
 
     /**

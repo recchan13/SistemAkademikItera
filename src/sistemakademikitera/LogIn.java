@@ -40,6 +40,11 @@ public class LogIn extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistemakademikitera/swing/pakeygini.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jLabel1FocusLost(evt);
+            }
+        });
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel1MousePressed(evt);
@@ -91,6 +96,10 @@ public class LogIn extends javax.swing.JFrame {
         form1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel2MousePressed
+
+    private void jLabel1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1FocusLost
 
     /**
      * @param args the command line arguments
