@@ -19,12 +19,13 @@ public class formasli extends javax.swing.JFrame {
     public String nama;
     public String nim;
     public String kriteria;
-    public String lok;
-    public formasli(String nama, String nim, String lok) {
+    public int lok;
+    public formasli(String nama, String nim, int lok) {
         initComponents();
         this.nama=nama;
         this.nim=nim;
         this.lok=lok;
+        
         namaa.setText(nama);
         nimm.setText(nim);
     }

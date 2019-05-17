@@ -6,7 +6,9 @@
 package sistemakademikitera;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -46,6 +48,8 @@ public class tambahadmin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         keterangan = new javax.swing.JLabel();
+        SELESAI = new javax.swing.JButton();
+        BATAL = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -66,7 +70,7 @@ public class tambahadmin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Masukan Data Admin Baru ");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 227, 30));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 227, 30));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,7 +78,7 @@ public class tambahadmin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 227, 30));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 227, 30));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 227, 30));
 
         jLabel1.setFont(new java.awt.Font("Agency FB", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,8 +97,32 @@ public class tambahadmin extends javax.swing.JFrame {
 
         keterangan.setFont(new java.awt.Font("Agency FB", 1, 20)); // NOI18N
         keterangan.setForeground(new java.awt.Color(255, 255, 255));
+        keterangan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         keterangan.setText("  ");
-        jPanel1.add(keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 210, 40));
+        jPanel1.add(keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 340, 40));
+
+        SELESAI.setBackground(new java.awt.Color(255, 255, 255));
+        SELESAI.setText("SELESAI");
+        SELESAI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SELESAIMouseClicked(evt);
+            }
+        });
+        jPanel1.add(SELESAI, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 510, 160, 40));
+
+        BATAL.setBackground(new java.awt.Color(255, 255, 255));
+        BATAL.setText("BATAL");
+        BATAL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BATALMouseClicked(evt);
+            }
+        });
+        BATAL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BATALActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BATAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 160, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 520, 630));
 
@@ -104,6 +132,47 @@ public class tambahadmin extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void BATALActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BATALActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_BATALActionPerformed
+
+    private void BATALMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BATALMouseClicked
+        // TODO add your handling code here:
+        menuadmin mnadmin=new menuadmin();
+        
+        mnadmin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BATALMouseClicked
+
+    private void SELESAIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SELESAIMouseClicked
+        // TODO add your handling code here:
+        Admin admin=new Admin(jTextField1.getText(),jTextField2.getText());
+        admin.loc=Integer.parseInt(jTextField3.getText());
+        
+        
+        try {
+            Statement stmt = con.createStatement();
+            String query="SELECT * FROM tempat_peminjaman WHERE id="+admin.loc+"";
+            ResultSet rs = stmt.executeQuery(query);
+            if(rs.next()){
+                admin.tambah(con);
+                keterangan.setText("Selesai");
+        
+                menuadmin mnadmin=new menuadmin();
+                mnadmin.setVisible(true);
+                this.dispose();
+            }else{
+                keterangan.setText("Harap masukkan lokasi yang tersedia");
+            }
+        } catch (SQLException ex) {
+            keterangan.setText("Harap lengkapi semua data");
+            Logger.getLogger(tambahadmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_SELESAIMouseClicked
     
     /**
      * @param args the command line arguments
@@ -141,6 +210,8 @@ public class tambahadmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BATAL;
+    private javax.swing.JButton SELESAI;
     private javax.swing.JLabel bcg;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
