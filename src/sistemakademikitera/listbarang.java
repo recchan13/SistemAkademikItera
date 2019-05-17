@@ -15,30 +15,28 @@ import javax.swing.JOptionPane;
  * @author Alle
  */
 public class listbarang  {
-    private int id;
-    private String nama;
-    public listbarang(int id, String nama){
-        this.id=id;
-        this.nama=nama;
+    private int idTempat;
+    private String idBarang;
+    
+    public listbarang(int idTempat, String idBarang){
+        this.idTempat=idTempat;
+        this.idBarang=idBarang;
     }
     
     public int getid(){
-        return id;
+        return idTempat;
     }
     public String getnama(){
-        return nama;
+        return idBarang;
     }
     
-    public boolean Pinjam (Connection conn) throws SQLException{
-        System.out.print(nama + id);
+    public void Pinjam (Connection conn) throws SQLException{
+        System.out.print(idBarang + idTempat);
          
-        if(id>=1 && id<=4){
-            String query="UPDATE `barang` SET jumlah_stok = jumlah_stok - 1 WHERE id ="+nama+" and id_tempat_pinjam="+id;
-            Statement st = conn.createStatement();
-            st.executeUpdate(query);  
-            return true;
-        }   else{
-            return false;
-        }
+        
+        String query="UPDATE `barang` SET jumlah_stok = jumlah_stok - 1 WHERE id ="+idBarang+" and id_tempat_pinjam="+idTempat;
+        Statement st = conn.createStatement();
+        st.executeUpdate(query);  
+        
     }
 }

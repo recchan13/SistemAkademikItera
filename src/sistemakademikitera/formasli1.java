@@ -166,11 +166,12 @@ public class formasli1 extends javax.swing.JFrame {
         if(!idbrang.getText().isEmpty()){
             listbarang barang = new listbarang (this.lok,this.idBrg);
             try {
-                if(barang.Pinjam(conn)){
-                   kesimpulan kesimpulanw= new kesimpulan();
-                   kesimpulanw.setVisible(true);
-                   this.dispose();
-                }
+                barang.Pinjam(conn);
+                
+                kesimpulan simpulan=new kesimpulan();
+                simpulan.setVisible(true);
+                this.dispose();
+                
             } catch (SQLException ex) {
                 Logger.getLogger(formasli1.class.getName()).log(Level.SEVERE, null, ex);
             }
