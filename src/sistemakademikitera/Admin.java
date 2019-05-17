@@ -86,8 +86,9 @@ public class Admin extends Abs {
     }
     
     public void tambah(Connection con)throws SQLException{
+        
         Statement stmt = con.createStatement();
-        String query="INSERT INTO admin(username,password,tempat_peminjaman_id) VALUE ('" +username+ "','" +pass+ "','" +loc+ "')";
+        String query="INSERT INTO admin(username,password,tempat_peminjaman_id) VALUE ('" +username+ "','" +pass+ "'," +loc+ ")";
         
         if(stmt.executeUpdate(query)==1){  
         }
